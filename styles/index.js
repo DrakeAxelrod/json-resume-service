@@ -42,10 +42,10 @@ function render(resume) {
         if (block.highlights === undefined) {
           block.highlights = [];
         }
-        if (block.summary) {
-          block.highlights.unshift(block.summary);
-          delete block.summary;
-        }
+        // if (block.summary) {
+        //   block.highlights.unshift(block.summary);
+        //   delete block.summary;
+        // }
       });
     }
   });

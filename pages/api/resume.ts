@@ -12,13 +12,12 @@ export const getJsonResume = async (uri: string) => {
   return await (await fetch(uri)).json();
 }
 
-export const html2pdf = async (url: string) => {
+export const html2pdf = async (uri: string) => {
+  console.log(uri)
   const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
-  await page.goto(url, {
-    waitUntil: "networkidle0",
-  });
-  const pdf = await page.pdf({ format: 'a4' });
+  await page.goto(uri, {waitUntil: "networkidle0",});
+  const pdf = await page.pdf({ format: 'a4' })
   await browser.close();
   // saves file to this project needed for debugging
   // fs.writeFileSync("test.pdf", pdf);
@@ -43,10 +42,23 @@ export const html2pdf = async (url: string) => {
 //   fs.writeFileSync(p, pdf);
 // }
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const pdf = await html2pdf(req.body.url)
+// export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+//   const pdf = await html2pdf(req.body.url)
+//   res.setHeader("Content-Type", "application/pdf");
+//   // res.setHeader("Content-Disposition", "attachment; filename=dummy.pdf");
+//   res.setHeader('Content-Length', pdf.length)
+//   res.status(200).send(pdf)
+// }
+
+
+export default async (_: NextApiRequest, res: NextApiResponse) => {
+  //const uri = _.headers.host //+ _.url
+  const isDev = process.env.NODE_ENV === "development"
+  const protocol = isDev ? "http://" : "https://" 
+  const pdf = await html2pdf(protocol + _.headers.host)
   res.setHeader("Content-Type", "application/pdf");
   // res.setHeader("Content-Disposition", "attachment; filename=dummy.pdf");
   res.setHeader('Content-Length', pdf.length)
   res.status(200).send(pdf)
+  // res.status(200).json({ text: 'Hello' })
 }

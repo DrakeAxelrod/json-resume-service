@@ -14,7 +14,7 @@ ul {
   margin-bottom: 0;
 }
 li {
-  margin-bottom: 2px;
+  margin-bottom: 0;
 }
 a {
   text-decoration: none;
@@ -63,7 +63,7 @@ a {
 
 .sectionContent ul {
   padding-left: 20px;
-  margin-top: 6px;
+  margin-top: 3px;
   list-style-type: circle;
 }
 
@@ -76,25 +76,25 @@ a {
 }
 
 .sectionContent .separator {
-  height: 14px;
+  height: 10px;
 }
 
 .sectionLine {
   border-style: dashed;
   border-width: 1px;
   border-color: #CFCFCF;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .divider {
   font-weight: bold;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .summary {
-  margin-top: 6px;
+  margin-top: 3px;
 }
 
 .skillBlock {
