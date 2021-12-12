@@ -1,32 +1,11 @@
-import jsPDF from "jspdf";
 import { NextApiRequest, NextApiResponse } from "next";
-import fs from "fs";
-import path from "path";
+// import fs from "fs";
+// import path from "path";
 import puppeteer from "puppeteer"
 
 
 const jsonResumeURI =
   "https://gist.githubusercontent.com/DrakeAxelrod/33726f328fa7d66f781f6408aac9c20e/raw/resume.json";
-
-
-
-const initDoc = () => {
-  return new jsPDF({
-    // "pt" (points), "mm", "cm", "m", "in" or "px"
-    orientation: "portrait",
-    unit: "mm",
-    // a0 - a10, b0 - b10, c0 - c10, dl, letter, government-letter, legal, junior-legal, ledger, tabloid, credit-card
-    format: "a4",
-    // Only put fonts into the PDF, which were used.
-    putOnlyUsedFonts: false,
-    // Compress the generated PDF.
-    compress: false,
-    // Precision of the element-positions.
-    precision: 2,
-    // Not to be confused with the base unit. Please inform yourself before you use it.
-    userUnit: 1.0,
-  });
-}
 
 
 export const getJsonResume = async (uri: string) => {
