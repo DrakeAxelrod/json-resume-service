@@ -14,10 +14,13 @@ const Home: FC<any> = (props: any) => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const uri = "https://gist.githubusercontent.com/DrakeAxelrod/33726f328fa7d66f781f6408aac9c20e/raw/resume.json"
+  const user = "DrakeAxelrod";
+  const gist = "33726f328fa7d66f781f6408aac9c20e";
+  const file = "resume.json"
+  const uri = `https://gist.github.com/${user}/${gist}/raw/${file}`;
   return {
     props: {
-      string: render(await (await fetch(uri)).json()),
+      string: render(await(await fetch(uri)).json()),
     },
   };
 };
