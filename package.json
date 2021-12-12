@@ -8,9 +8,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "chrome-aws-lambda": "^10.1.0",
     "handlebars": "^4.7.7",
     "next": "12.0.7",
     "puppeteer": "^13.0.0",
+    "puppeteer-core": "^13.0.0",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
