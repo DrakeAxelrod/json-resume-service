@@ -8,7 +8,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "handlebars": "^4.7.7",
     "next": "12.0.7",
+    "puppeteer": "^13.0.0",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
