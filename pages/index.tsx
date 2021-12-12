@@ -1,6 +1,5 @@
 import { GetStaticProps } from "next";
-import render from '../styles';
-import { getJsonResume } from './api/resume';
+import render from '../lib/json2handlebars';
 import { FC } from 'react';
 
 const Home: FC<any> = (props: any) => {
