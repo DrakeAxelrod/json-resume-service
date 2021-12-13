@@ -2,11 +2,7 @@
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FDrakeAxelrod%2Fjson-resume-service)
 
-
-[![Example Image](/public/resume-service-image.png)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FDrakeAxelrod%2Fjson-resume-service)
-<!-- <a href="https://twitter.com/vercel">
-    <img align="right" src="https://og-image.vercel.app/tweet.png" height="300" />
-</a> -->
+<img src="public/resume-service-image.png" alt="resume service example" align="center" />
 
 Serverless service that uses the [jsonresume.org](https://jsonresume.org/) schema to generate dynamic resumes from a github gist that you can download or recieve back as a http response.
 
@@ -185,7 +181,15 @@ yarn
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/DrakeAxelrod"><img src="https://avatars.githubusercontent.com/u/51012876?v=4" width="64px;" alt="Drake Axelrod" style="border-radius: 100%;"/><br /><sub><b>Drake Axelrod</b></sub></td>
+    <td align="center">
+      <a href="https://github.com/DrakeAxelrod">
+        <img src="https://avatars.githubusercontent.com/u/51012876?v=4" width="64px;" alt="Drake Axelrod" style="border-radius: 100%;"/>
+      </a>
+      <br />
+      <sub>
+        <b>Drake Axelrod</b>
+      </sub>
+    </td>
   </tr>
 </table>
 
