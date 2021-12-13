@@ -2,7 +2,9 @@
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FDrakeAxelrod%2Fjson-resume-service)
 
-<img src="public/resume-service-image.png" alt="resume service example" align="center" />
+<p align="center">
+<img src="public/resume-service-image.png" alt="resume service example" />
+</p>
 
 Serverless service that uses the [jsonresume.org](https://jsonresume.org/) schema to generate dynamic resumes from a github gist that you can download or recieve back as a http response.
 
