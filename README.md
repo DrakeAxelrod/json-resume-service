@@ -193,6 +193,8 @@ yarn
 
 MIT © [Drake Axelrod](https://github.com/DrakeAxelrod)
 
+👉 [license](https://github.com/DrakeAxelrod/json-resume-service/blob/main/LICENSE.md)
+
 ## Footer
 
 [^1]: [json resume basic schema](https://jsonresume.org/schema/)
