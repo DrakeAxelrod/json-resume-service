@@ -1,23 +1,6 @@
 import json2md from "json2md";
 import YAML from "yaml";
 
-// "h1"
-// "h2"
-// "h3"
-// "h4"
-// "h5"
-// "h6"
-// "p"
-// "blockquote"
-// "img"
-// "ul"
-// "ol"
-// "hr"
-// "code"
-// "table"
-// "link";
-// data: String | Object | Array<String>;
-
 json2md.converters.yaml = (input) => {
   return `---\n${YAML.stringify(input)}---`;
 };
@@ -70,57 +53,99 @@ const getHeading = (json: any): any[] => {
   return data;
 };
 
-const section = (title: string, json: any, cb: Function) => {
-  const data = cb(json);
-  data.unshift({ h2: title.replace(/\b\w/g, (l) => l.toUpperCase()) });
+const section = (title: string, json: Resume) => {
+  const _title = { h2: title.replace(/\b\w/g, (l) => l.toUpperCase()) };
+  let data
+  switch (title) {
+  case "skills":
+    data = json.skills ? getSkills(json.skills) : []
+  case "education":
+    data = json.education ? getEducation(json.education) : []
+  case "work experience":
+    data = json.work ? getWork(json.work) : []
+  case "projects":
+    data = json.projects ? getProjects(json.projects) : []
+  case "awards":
+    data = json.awards ? getAwards(json.awards) : []
+  case "publications":
+    data = json.publications ? getPublications(json.publications) : []
+  case "volunteer":
+    data = json.volunteer ? getVolunteer(json.volunteer) : []
+  case "languages":
+    data = json.languages ? getLanguages(json.languages) : []
+  case "interests":
+    data = json.interests ? getInterests(json.interests) : []
+  case "references":
+    data = json.references ? getReferences(json.references) : []
+  default: 
+    data = []
+  }
+  data.unshift(_title);
   return data;
 };
 
-const getSkills = (json: any): any[] => {
-  const data: any[] = [];
+// "h1"
+// "h2"
+// "h3"
+// "h4"
+// "h5"
+// "h6"
+// "p"
+// "blockquote"
+// "img"
+// "ul"
+// "ol"
+// "hr"
+// "code"
+// "table"
+// "link";
+// data: String | Object | Array<String>;
+
+const getSkills = (skills: Skill[]): Skill[] => {
+  const data: Skill[] = [];
   return data;
 };
-const getEducation = (json: any): any[] => {
-  const data: any[] = [];
+const getEducation = (education: Education[]): Education[] => {
+  const data: Education[] = [];
   return data;
 };
-const getWork = (json: any): any[] => {
-  const data: any[] = [];
+const getWork = (Work: WorkExperience[]): WorkExperience[] => {
+  const data: WorkExperience[] = [];
   return data;
 };
-const getProjects = (json: any): any[] => {
-  const data: any[] = [];
+const getProjects = (projects: Project[]): Project[] => {
+  const data: Project[] = [];
   return data;
 };
-const getVolunteer = (json: any): any[] => {
-  const data: any[] = [];
+const getVolunteer = (volunteer: Volunteer[]): Volunteer[] => {
+  const data: Volunteer[] = [];
   return data;
 };
-const getAwards = (json: any): any[] => {
-  const data: any[] = [];
+const getAwards = (awards: Award[]): Award[] => {
+  const data: Award[] = [];
   return data;
 };
-const getPublications = (json: any): any[] => {
-  const data: any[] = [];
+const getPublications = (publications: Publication[]): Publication[] => {
+  const data: Publication[] = [];
   return data;
 };
-const getLanguages = (json: any): any[] => {
-  const data: any[] = [];
+const getLanguages = (languages: Language[]): Language[] => {
+  const data: Language[] = [];
   return data;
 };
-const getInterests = (json: any): any[] => {
-  const data: any[] = [];
+const getInterests = (interests: Interest[]): Interest[] => {
+  const data: Interest[] = [];
   return data;
 };
-const getReferences = (json: any): any[] => {
-  const data: any[] = [];
+const getReferences = (references: Reference[]): Reference[] => {
+  const data: Reference[] = [];
   return data;
 };
 
 const defaultOrder = [
   "skills",
   "education",
-  "work",
+  "work experience",
   "projects",
   "awards",
   "publications",
@@ -134,20 +159,8 @@ export const json_resume2md = (json: any, order = defaultOrder): string => {
   const meta = getMeta(json);
   const heading = getHeading(json);
   const template: any[] = [...meta, ...heading];
-  const sections: { [key: string]: any } = {
-    skills: section("skills", json, getSkills),
-    education: section("education", json, getEducation),
-    work: section("work experience", json, getWork),
-    projects: section("projects", json, getProjects),
-    awards: section("awards", json, getAwards),
-    publications: section("publications", json, getPublications),
-    volunteer: section("volunteer", json, getVolunteer),
-    languages: section("languages", json, getLanguages),
-    interests: section("interests", json, getInterests),
-    references: section("references", json, getReferences),
-  };
   order.forEach((key: any) => {
-    template.push(sections[key])
+    template.push(section(key, json))
   })
   return json2md(template);
 };

@@ -45,7 +45,7 @@ It’s estimated that over 75% of the recruiters use some ATS. Other sources say
 
 ### Good Examples
 
-![FANNG New Grad]("./images/FANNG-New-Grad.png)
+![FANNG New Grad](./images/FANNG-New-Grad.png)
 
 Pretty sure this is the same and using LaTeX is a really good idea
 
