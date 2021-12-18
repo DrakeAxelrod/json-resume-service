@@ -1,24 +1,26 @@
-const jsonResumeURI =
-  "https://gist.githubusercontent.com/DrakeAxelrod/33726f328fa7d66f781f6408aac9c20e/raw/resume.json";
+// pages/api/index.ts
 
+import { NextApiRequest, NextApiResponse } from "next";
+// import fs from "fs";
+import { getPDF } from "./chromium";
 
-export const getJsonResume = async (uri: string) => {
-  return await (await fetch(uri)).json();
+const isDev = process.env.NODE_ENV === "development";
+
+export default async function (_: NextApiRequest, res: NextApiResponse) {
+  const protocol = isDev ? "http://" : "https://" 
+  const uri = protocol + _.headers.host
+  console.log(uri)
+    try {
+        const file = await getPDF(uri, isDev);
+        res.statusCode = 200;
+        res.setHeader('Content-Type',"application/pdf");
+        // res.setHeader("Content-Disposition", "attachment; filename=dummy.pdf");
+        res.setHeader('Content-Length', file.length)
+        res.end(file);
+    } catch (e) {
+        res.statusCode = 500;
+        res.setHeader('Content-Type', 'text/html');
+        res.end('<h1>Internal Error</h1><p>Sorry, there was a problem</p>');
+        console.error(e);
+    }
 }
-
-// const resumeURL = "https://registry.jsonresume.org/DrakeAxelrod";
-// const apiURL = "http://localhost:3000/api/html2pdf";
-// const response = await fetch(apiURL, {
-//   method: "POST",
-//   headers: {
-//     "Content-Type": "application/json",
-//   },
-//   body: JSON.stringify({ url: resumeURL }),
-// });
-// const buf = Buffer.from(await response.arrayBuffer());
-// saveResumeToFiles(buf, resumeURL.split("/").pop() as string);
-// export const saveResumeToFiles = (pdf: any, defaultFileName: string) => {
-//   const filename = `${defaultFileName}.pdf`
-//   const p = path.join(process.cwd(), "public", filename);
-//   fs.writeFileSync(p, pdf);
-// }
