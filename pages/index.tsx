@@ -1,9 +1,14 @@
 import { GetStaticProps } from "next";
 //import render from '@lib/json2handlebars';
 import { DemoResume } from "@components/demo-resume/index"
-import { FC } from 'react';
+import { FC, useState } from 'react';
+import { useColorMode } from "@chakra-ui/react";
+import axios from 'axios';
 
 const Home: FC = () => {
+  const { colorMode, toggleColorMode } = useColorMode();
+  // just forcing it to be light mode for now looks better for resumes
+  colorMode === "dark" ? toggleColorMode() : null
   return (
     <>
     <DemoResume />

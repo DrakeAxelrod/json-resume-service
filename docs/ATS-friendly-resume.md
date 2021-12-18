@@ -20,12 +20,10 @@ It’s estimated that over 75% of the recruiters use some ATS. Other sources say
     - **Pros:** A lot of professionals rank Helvetica as one of the more beautiful sans-serif fonts. A perfect font to use on a CV!
     - **Cons:** Helvetica comes preloaded on Macs, but you aren’t going to find it listed under fonts in Microsoft Word. You’re going to have to buy it if you want to use it and don’t have a Mac.
 4. Georgia
-
     - **Pros:** You can find Georgia across writing platforms. It’s accessible and a fine replacement font for other serif typefaces, like Times New Roman. Recently (2013) re-released and updated, so it’s up to date.
     - **Cons:** Georgia’s popularity may make it hard for you to stand out. Also, it was inspired by Scotch Roman designs of the 19th century, so if you want to stand out, you might want to go with something else.
 5. Verdana
     - **Pros:** Great for job seekers who need to squeeze more onto their resumes, as it was optimized for small-print legibility.
-
     - **Cons:** If you’re seeking a “wow” CV font, keep on looking. Verdana doesn’t look all that different from Arial and Arial looks like Helvetica.
 6. Garamond
     - **Pros:** Among designers and ad managers, Garamond is a favorite. It meets all the requirements of a good resume font: easy to read, attractive, classy, and not something everyone and their mother uses.

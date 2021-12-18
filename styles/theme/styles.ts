@@ -6,11 +6,12 @@ export const styles = extendTheme({
   styles: {
     global: (props: Dict<any>) => ({
       // body: {
-      //   fontFamily: "body",
+      //   fontFamily: "Roboto",
       //   color: mode("gray.800", "whiteAlpha.900")(props),
       //   bg: mode("white", "gray.800")(props),
       //   lineHeight: "base",
       // },
+
     }),
   },
 });

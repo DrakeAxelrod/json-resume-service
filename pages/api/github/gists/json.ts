@@ -1,4 +1,5 @@
 import axios from "axios";
+import { github_api} from "@lib/api/github";
 import { Req, Res } from "types";
 import { github_api_base_url } from "@lib/constants";
 
@@ -12,9 +13,14 @@ const get_resume_json_from_public_gists = (username: string, gists: []) => {
 const handler = async (req: Req, res: Res) => {
   const username = req.query.username as string
   if (username) {
-    const { data } = await axios.get(
-      `${github_api_base_url}/users/${username}/gists`
-    );
+    const { data } = 
+    await axios.get(`${github_api_base_url}/users/${username}/gists`);
+    
+    // const data = await github_api.request("GET /users/{username}/gists", {
+    //   username: username
+    // })
+    // console.log(data)
+
     const json_resume_url = get_resume_json_from_public_gists(username, data);
     const result = await axios.get(json_resume_url)
     const raw_json = result.data

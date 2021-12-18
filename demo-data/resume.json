@@ -1,0 +1,297 @@
+{
+  "awards": [],
+  "basics": {
+    "email": "drake@draxel.io",
+    "image": "https://res.cloudinary.com/draxel/image/upload/v1639256540/jenga-2-bw_jkwych.webp",
+    "label": "Software Engineering Student",
+    "location": {
+      "city": "Göteborg",
+      "countryCode": "SE",
+      "region": "Västra Götalands län"
+    },
+    "name": "Drake Axelrod",
+    "phone": "+46 0724034462",
+    "profiles": [
+      {
+        "network": "twitter",
+        "url": "https://twitter.com/drakeaxelrod",
+        "username": "drakeaxelrod"
+      },
+      {
+        "network": "linkedin",
+        "url": "https://www.linkedin.com/in/drakeaxelrod",
+        "username": "drakeaxelrod"
+      },
+      {
+        "network": "github",
+        "url": "https://github.com/DrakeAxelrod",
+        "username": "DrakeAxelrod"
+      },
+      {
+        "network": "discord",
+        "url": "https://discordapp.com/users/549704894391517324",
+        "username": "Drake#4748"
+      }
+    ],
+    "summary": "Currently studying Software Engineering at the University of Göteborg. I am eager to secure challenging roles in the Software industry, particularly in Penetration Testing and Cybersecurity. I love the entire IT subject and am always looking for new things to learn or ways to improve. I would love to chat about the industry.",
+    "website": "https://www.draxel.io"
+  },
+  "education": [
+    {
+      "area": "Software Engineering & Management",
+      "courses": [
+        "Mathematical Foundations for Software Engineering - G",
+        "Object-Oriented Programming - VG",
+        "Requirements and User Experience - VG",
+        "Mini Project: Team Programming - VG",
+        "Data Management - G",
+        "Data Structures and Algorithms - VG",
+        "Software Analysis and Design - VG",
+        "Mini Project: Systems Development - VG",
+        "Web and Mobile Development - VG",
+        "Fundamentals of Software Architecture - VG"
+      ],
+      "endDate": "2023-05-25",
+      "institution": "University of Gothenburg",
+      "score": "",
+      "startDate": "2020-08-01",
+      "studyType": "BSc"
+    },
+    {
+      "area": "Anthropology (incomplete)",
+      "courses": [],
+      "endDate": "2018-08-01",
+      "institution": "University of California, Santa Cruz",
+      "score": "",
+      "startDate": "2016-08-01",
+      "studyType": "BA"
+    },
+    {
+      "area": "Social and Behavioral Science",
+      "courses": [],
+      "endDate": "2015-05-01",
+      "institution": "Santa Monica Community College",
+      "score": "",
+      "startDate": "2012-08-01",
+      "studyType": "A.A. Liberal Arts"
+    }
+  ],
+  "interests": [
+    {
+      "keywords": [
+        "Ethical Hacking",
+        "Penetration Testing",
+        "Reverse Engineering",
+        "Malware/Viruses/Worms"
+      ],
+      "name": "Cybersecurity"
+    },
+    {
+      "keywords": ["Ocean", "Board sports"],
+      "name": "Surfing"
+    },
+    {
+      "name": "Open Source"
+    },
+    {
+      "name": "Game Development"
+    },
+    {
+      "name": "Reading"
+    },
+    {
+      "name": "Writing"
+    }
+  ],
+  "languages": [
+    {
+      "fluency": "Native speaker",
+      "language": "English"
+    },
+    {
+      "fluency": "Native speaker",
+      "language": "Swedish"
+    }
+  ],
+  "meta": {
+    "theme": "onepage"
+  },
+  "projects": [
+    {
+      "description": "Introductory CTF - Collaboration between Orange Cyberdefense and Halmstad University",
+      "endDate": "2020-12-04",
+      "entity": "HTB University",
+      "highlights": [
+        "Great learning experience",
+        "Got to experience some really interesting aspects of cybersecurity",
+        "Got to work in a team in a Cybersecurity oriented mindset"
+      ],
+      "keywords": ["cryptography", "image encoding/embedding", "ssh", "linux"],
+      "name": "HH CTF 2020",
+      "roles": ["Team Lead"],
+      "startDate": "2020-12-04",
+      "type": "Event"
+    },
+    {
+      "description": "From BScs to PhDs, the opportunity is yours to crack the code and show your skills to one-up the other teams — and other universities!",
+      "endDate": "2020-12-04",
+      "entity": "Huawei's Hackathon",
+      "highlights": [
+        "Got to work on optimizing processing, and task scheduling",
+        "Qualified for the Stockholm 24hr in person Hackathon",
+        "Got to meet other students from universities studying things like machine learning and embedded systems ranging from bachelors to phd's"
+      ],
+      "keywords": [
+        "processing",
+        "python",
+        "c",
+        "task scheduling",
+        "multi-threading"
+      ],
+      "name": "Huawei's Hackathon 2021 - Stockholm",
+      "roles": ["Team Member"],
+      "startDate": "2020-12-03",
+      "type": "Event"
+    },
+    {
+      "description": "Five days dedicated to sustainable development, three main events each day, endless amounts of knowledge, and plenty of facts",
+      "endDate": "2020-11-20",
+      "entity": "Chalmers University of Technology and the University of Gothenburg",
+      "highlights": [
+        "Got to meet interesting industry professionals",
+        "Lots of enthusiasm for creating sustainable solutions",
+        "Came up with an interesting solution to remote learning by making it a MMORPG"
+      ],
+      "keywords": ["Sustainability", "Remote Learning", "Opensource", "MMORPG"],
+      "name": "Act! Sustainable Design Jam 2020",
+      "roles": ["Team Member"],
+      "startDate": "2020-11-16",
+      "type": "Event"
+    },
+    {
+      "description": "Collection of students interested in learning more about Cybersecurity",
+      "entity": "Student Association",
+      "highlights": [
+        "Spend time with others interested in Cybersecurity",
+        "Teaching of concepts learned",
+        "Sharing of knowledge"
+      ],
+      "keywords": ["CTF", "Collective Learning", "Team", "Co-operation"],
+      "name": "Read The Docs",
+      "roles": ["Chairman"],
+      "startDate": "2020-08-03",
+      "type": "Association"
+    }
+  ],
+  "references": [],
+  "skills": [
+    {
+      "keywords": [
+        "Object Oriented Programming",
+        "Software Architecture",
+        "Scrum",
+        "Agile",
+        "CI/CD",
+        "Process Engineering",
+        "Networking",
+        "Operating Systems",
+        "Virtualization"
+      ],
+      "level": "intermediate",
+      "name": "Development"
+    },
+    {
+      "keywords": [
+        "java",
+        "python",
+        "shell script (bash, zsh, fish, sh)",
+        "GDScript (Godot game engine)",
+        "javascript",
+        "typescript",
+        "c",
+        "c++",
+        "go",
+        "html",
+        "jsx",
+        "tsx",
+        "scss",
+        "css"
+      ],
+      "level": "intermediate",
+      "name": "Languages"
+    },
+    {
+      "keywords": [
+        "digitalocean",
+        "heroku",
+        "git",
+        "mongodb",
+        "sql",
+        "postgres",
+        "serverless",
+        "graphql",
+        "linux",
+        "osx",
+        "windows",
+        "docker",
+        "node",
+        "next.js",
+        "react",
+        "redux",
+        "vue",
+        "vuex",
+        "chakra-ui",
+        "styled components",
+        "bootstrap"
+      ],
+      "level": "intermediate",
+      "name": "Frameworks"
+    }
+  ],
+  "work": [
+    {
+      "endDate": "2019-10-01",
+      "highlights": [
+        "Wrote a python script to auto grade all groups via running a unit test suite against projects",
+        "Got to work with new students and help them learn new concepts like git, maven, and unit testing",
+        "Experienced Object Oriented Programming from the role of a teacher"
+      ],
+      "location": "Gothenburg, Sweden",
+      "name": "Object Oriented Programming",
+      "summary": "The course introduces the student to a contemporary object-oriented programming language with associated platforms and environments, with emphasis on basic programming language concepts, object oriented concepts, and elementary data structures.",
+      "position": "Teaching Assitant",
+      "startDate": "2021-08-01",
+      "website": "https://www.gu.se/en/study-gothenburg/object-oriented-programming-dit043"
+    },
+    {
+      "endDate": "2017-03-14",
+      "highlights": [
+        "Led large classes (50+ students) towards competency on a surfboard.",
+        "Management of students and other instructors",
+        "Delegation of student groups and tasks to other instructors to create a good learning experience",
+        "Sold and booked classes, processed payments, communicated with head-quarters in regards to updated schedule",
+        "Worked with autistic and blind children",
+        "Safety skills and certifications to respond to unforeseen circumstances (CPR & First Aid through Red Cross)"
+      ],
+      "location": "Los Angeles, CA",
+      "name": "LearnToSurfLA",
+      "position": "Surf Instructor",
+      "startDate": "2013-06-01",
+      "summary": "LearnToSurfLA is the premier surf school in Los Angeles, Santa Monica, Venice Beach and Manhattan Beach, we are passionate about helping our students experience the thrill of the waves.",
+      "website": "https://www.learntosurfla.com/"
+    },
+    {
+      "endDate": "2019-05-04",
+      "highlights": [
+        "Sold Alinta Energy - Conversion from current supplier to Alinta Energy",
+        "Analyzed sales data and negotiation techniques to leverage client sales.",
+        "Attended training seminars for B2B sales"
+      ],
+      "location": "Brisbane, Australia",
+      "name": "More Marketing Group",
+      "position": "Independent contractor B2B Sales",
+      "startDate": "2019-01-09",
+      "website": "https://www.instagram.com/more_marketing_group/"
+    }
+  ]
+}

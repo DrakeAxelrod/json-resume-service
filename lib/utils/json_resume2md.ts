@@ -55,33 +55,32 @@ const getHeading = (json: any): any[] => {
 
 const section = (title: string, json: Resume) => {
   const _title = { h2: title.replace(/\b\w/g, (l) => l.toUpperCase()) };
-  let data
   switch (title) {
-  case "skills":
-    data = json.skills ? getSkills(json.skills) : []
-  case "education":
-    data = json.education ? getEducation(json.education) : []
-  case "work experience":
-    data = json.work ? getWork(json.work) : []
-  case "projects":
-    data = json.projects ? getProjects(json.projects) : []
-  case "awards":
-    data = json.awards ? getAwards(json.awards) : []
-  case "publications":
-    data = json.publications ? getPublications(json.publications) : []
-  case "volunteer":
-    data = json.volunteer ? getVolunteer(json.volunteer) : []
-  case "languages":
-    data = json.languages ? getLanguages(json.languages) : []
-  case "interests":
-    data = json.interests ? getInterests(json.interests) : []
-  case "references":
-    data = json.references ? getReferences(json.references) : []
-  default: 
-    data = []
+    case "skills":
+      return json.skills ? getSkills(_title, json.skills) : [];
+    case "education":
+      return json.education ? getEducation(_title, json.education) : [];
+    case "work experience":
+      return json.work ? getWork(_title, json.work) : [];
+    case "projects":
+      return json.projects ? getProjects(_title, json.projects) : [];
+    case "awards":
+      return json.awards ? getAwards(_title, json.awards) : [];
+    case "publications":
+      return json.publications
+        ? getPublications(_title, json.publications)
+        : [];
+    case "volunteer":
+      return json.volunteer ? getVolunteer(_title, json.volunteer) : [];
+    case "languages":
+      return json.languages ? getLanguages(_title, json.languages) : [];
+    case "interests":
+      return json.interests ? getInterests(_title, json.interests) : [];
+    case "references":
+      return json.references ? getReferences(_title, json.references) : [];
+    default:
+      return [];
   }
-  data.unshift(_title);
-  return data;
 };
 
 // "h1"
@@ -101,44 +100,97 @@ const section = (title: string, json: Resume) => {
 // "link";
 // data: String | Object | Array<String>;
 
-const getSkills = (skills: Skill[]): Skill[] => {
-  const data: Skill[] = [];
+const getSkills = (title: any, skills: Skill[]): Skill[] => {
+  const data: any[] = [];
+  skills.forEach((skill) => {
+    data.push({ h3: `${skill.name} - ${skill.level}` });
+    if (skill.keywords) data.push({ ul: skill.keywords });
+  });
+  data.length > 0 ? data.unshift(title) : null;
   return data;
 };
-const getEducation = (education: Education[]): Education[] => {
-  const data: Education[] = [];
+// "education": [{
+//   "institution": "University",
+//   "url": "https://institution.com/",
+//   "area": "Software Development",
+//   "studyType": "Bachelor",
+//   "startDate": "2011-01-01",
+//   "endDate": "2013-01-01",
+//   "score": "4.0",
+//   "courses": [
+//     "DB1101 - Basic SQL"
+//   ]
+const getEducation = (title: any, educations: Education[]): Education[] => {
+  const data: any[] = [];
+  const edu = (education: any) => {
+    if (education.url)
+      return json2md({
+        link: { title: education.institution, source: education.url },
+      });
+    else
+      return education.institution
+  };
+  educations.forEach((education) => {
+    console.log(education);
+    data.push({
+      h3: edu(education),
+    });
+    data.push(
+      `${education.area}, ${education.studyType} - ${education.startDate} to ${education.endDate}`
+    );
+    data.push({ ul: education.courses });
+  });
+
+  data.length > 0 ? data.unshift(title) : null;
   return data;
 };
-const getWork = (Work: WorkExperience[]): WorkExperience[] => {
-  const data: WorkExperience[] = [];
+
+// stuff below still need to be populated
+
+const getWork = (title: any, workExperiences: WorkExperience[]): WorkExperience[] => {
+  const data: any[] = [];
+  workExperiences.forEach((experience) => {
+    data.push({ h3: `${experience.name} - ${experience.position}`})
+  })
+  data.length > 0 ? data.unshift(title) : null;
   return data;
 };
-const getProjects = (projects: Project[]): Project[] => {
-  const data: Project[] = [];
+const getProjects = (title: any, projects: Project[]): Project[] => {
+  const data: any[] = [];
+  data.length > 0 ? data.unshift(title) : null;
   return data;
 };
-const getVolunteer = (volunteer: Volunteer[]): Volunteer[] => {
-  const data: Volunteer[] = [];
+const getVolunteer = (title: any, volunteer: Volunteer[]): Volunteer[] => {
+  const data: any[] = [];
+  data.length > 0 ? data.unshift(title) : null;
   return data;
 };
-const getAwards = (awards: Award[]): Award[] => {
-  const data: Award[] = [];
+const getAwards = (title: any, awards: Award[]): Award[] => {
+  const data: any[] = [];
+  data.length > 0 ? data.unshift(title) : null;
   return data;
 };
-const getPublications = (publications: Publication[]): Publication[] => {
-  const data: Publication[] = [];
+const getPublications = (
+  title: any,
+  publications: Publication[]
+): Publication[] => {
+  const data: any[] = [];
+  data.length > 0 ? data.unshift(title) : null;
   return data;
 };
-const getLanguages = (languages: Language[]): Language[] => {
-  const data: Language[] = [];
+const getLanguages = (title: any, languages: Language[]): Language[] => {
+  const data: any[] = [];
+  data.length > 0 ? data.unshift(title) : null;
   return data;
 };
-const getInterests = (interests: Interest[]): Interest[] => {
-  const data: Interest[] = [];
+const getInterests = (title: any, interests: Interest[]): Interest[] => {
+  const data: any[] = [];
+  data.length > 0 ? data.unshift(title) : null;
   return data;
 };
-const getReferences = (references: Reference[]): Reference[] => {
-  const data: Reference[] = [];
+const getReferences = (title: any, references: Reference[]): Reference[] => {
+  const data: any[] = [];
+  data.length > 0 ? data.unshift(title) : null;
   return data;
 };
 
@@ -155,12 +207,12 @@ const defaultOrder = [
   "references",
 ];
 export const json_resume2md = (json: any, order = defaultOrder): string => {
-  console.log(json.skills);
+  //console.log(json);
   const meta = getMeta(json);
   const heading = getHeading(json);
   const template: any[] = [...meta, ...heading];
   order.forEach((key: any) => {
-    template.push(section(key, json))
-  })
+    template.push(...section(key, json));
+  });
   return json2md(template);
 };
