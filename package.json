@@ -8,8 +8,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@octokit/auth-app": "^3.6.1",
-    "@octokit/core": "^3.5.1",
     "axios": "^0.24.0",
     "cheerio": "^1.0.0-rc.10",
     "chrome-aws-lambda": "^10.1.0",

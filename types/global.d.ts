@@ -11,3 +11,8 @@ declare type Children =
   | ReactPortal
   | null
   | undefined;
+  
+declare type ResumeSectionProps = {
+  resume: Resume;
+  name: string;
+};

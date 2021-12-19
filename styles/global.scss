@@ -79,10 +79,11 @@ h6 {
 }
 // https://www.joshwcomeau.com/css/custom-css-reset/
 
-
 // https://www.w3schools.com/howto/howto_css_social_media_buttons.asp
 /* Style all font awesome icons */
-.fa, .far, .fas {
+.fa,
+.far,
+.fas {
   vertical-align: middle;
   padding: 0.5em;
   margin: auto;
@@ -95,6 +96,66 @@ h6 {
 }
 
 /* Add a hover effect if you want */
-.fa:hover, .far:hover, .fas:hover {
+.fa:hover,
+.far:hover,
+.fas:hover {
   opacity: 0.7;
+}
+
+// @media print {
+//   // this needs to be hyper fined tuned for correct printing
+//   @page {
+//     size: $A4_width $A4_actual_height;
+//   }
+//   .A4 {
+//     height: 100%;
+//     width: 100%;
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     margin: 0 auto;
+//     padding: 0;
+//     // line-height: 18px;
+//   }
+// }
+
+// a4 properties
+$A4_actual_height: 297mm;
+$A4_height: 100%;
+$A4_width: 210mm;
+
+// needs to print super well
+@media print {
+  @page {
+    size: A4;
+  }
+  
+  header, footer, aside, nav, form, iframe, .menu, .hero, .adslot {
+    display: none;
+  }
+  
+  body {
+    margin: 2em;
+    color: #fff;
+    background-color: #000;
+  }
+
+  //   .A4 {
+  //   margin: 0 auto;
+  //   box-sizing: border-box;
+  //   padding: 7.62mm;
+  //   width: $A4_width;
+  //   //height: 297mm;
+  //   height: $A4_height;
+  //   background: white;
+  //   box-shadow: $shadow;
+  //   -webkit-box-shadow: $shadow;
+  // }
+  // .resume_page {
+  //   padding-top: 5rem;
+
+  //   background: $whitesmoke;
+  //   min-height: 100vh;
+  //   min-width: 100vw;
+  // }
 }

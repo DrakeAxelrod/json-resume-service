@@ -1,6 +1,6 @@
 import { GetStaticProps } from "next";
 //import render from '@lib/json2handlebars';
-import { DemoResume } from "@components/demo-resume/index"
+import { Resume } from "@components/resume/index"
 import { FC, useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -9,14 +9,14 @@ const Home: FC = () => {
   useEffect(() => {
     // Run! Like go get some data from an API.
     const getResume = async () => {
-      const { data } = await axios.get("http://localhost:3000/api/dev-resume");
+      const { data } = await axios.get("http://localhost:3000/api/github/gists/DrakeAxelrod");
       setResume(data);
     };
     getResume();
   }, []); // [] (no params)  will ensure the useEffect only runs once.
   return (
     <>
-      <DemoResume resume={resume} />
+      <Resume resume={resume} />
     </>
   );
 };;

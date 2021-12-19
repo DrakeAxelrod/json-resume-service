@@ -162,8 +162,11 @@ declare type Project = {
  * @link https://jsonresume.org/.
  * @category JSON Resume
  */
+
+
 declare type Resume = {
-  basics?: Basics,
+  [index: string]: any;
+  basics?: Basics;
   work?: Work[];
   volunteer?: Volunteer[];
   education?: Education[];

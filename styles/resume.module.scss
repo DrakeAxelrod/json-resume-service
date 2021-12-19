@@ -50,23 +50,6 @@ $A4_width: 210mm;
   -webkit-box-shadow: $shadow;
 }
 
-@media print {
-  // this needs to be hyper fined tuned for correct printing
-  @page {
-    size: $A4_width $A4_actual_height;
-  }
-  .A4 {
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    margin: 0 auto;
-    padding: 0;
-    // line-height: 18px;
-  }
-}
-
 .resume_page {
   padding-top: 5rem;
 
@@ -75,10 +58,12 @@ $A4_width: 210mm;
   min-width: 100vw;
 }
 
+// add fallbacks
 $headerFont: Roboto, slab-serif;
 $bodyFont: Source Sans Pro;
-.demo_resume {
-  font-family: Source Sans Pro;
+
+.resume {
+  font-family: $bodyFont;
   color: $text;
   // heading section
   h1 {
@@ -108,12 +93,20 @@ $bodyFont: Source Sans Pro;
     display: inline;
     font-size: 1em;
   }
-  p[class="float-left"] {
+  p[class="date"] {
+    font-style: italic;
+    padding-top: 0.125em;
+    vertical-align: bottom;
     float: right;
+    font-size: 0.75em;
   }
   a[class="plain-link"] {
     text-decoration: none;
     color: $text;
+  }
+  ul {
+    line-height: 1.5;
+    list-style-type: square;
   }
   header {
     text-align: center;
@@ -160,6 +153,8 @@ $bodyFont: Source Sans Pro;
     p[class="skill-keywords"] {
       font-size: 0.8em;
     }
+  }
+  section[class="education-section"] {
     p[class="area-of-study"] {
       display: inline-block;
     }
