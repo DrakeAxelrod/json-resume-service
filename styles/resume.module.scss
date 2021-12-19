@@ -1,0 +1,146 @@
+// colors (not all used)
+$ivory: #fffff0;
+$ghostwhite: #f8f8ff;
+$whitesmoke: #f5f5f5;
+
+// Gray-scale colors
+$darkgray: #333333;
+$gray: #5d5d5d;
+$lightgray: #999999;
+// Basic colors
+$green: #c2e15f;
+$orange: #fda333;
+$purple: #d3a4f9;
+$red: #fb4485;
+$blue: #6ce0f1;
+// Awesome colors
+$awesome-emerald: #00a388;
+$awesome-skyblue: #0395de;
+$awesome-red: #dc3522;
+$awesome-pink: #ef4089;
+$awesome-orange: #ff6138;
+$awesome-nephritis: #27ae60;
+$awesome-concrete: #95a5a6;
+$awesome-dark-night: #131a28;
+$awesome: $awesome-red;
+
+// Text colors
+$dark-text: #414141;
+$text: $darkgray;
+$gray-text: $gray;
+$light-text: $lightgray;
+
+// shadow :P
+$shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+// a4 properties
+$A4_actual_height: 297mm;
+$A4_height: 100%;
+$A4_width: 210mm;
+// fonts
+
+.A4 {
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 7.62mm;
+  width: $A4_width;
+  //height: 297mm;
+  height: $A4_height;
+  background: white;
+  box-shadow: $shadow;
+  -webkit-box-shadow: $shadow;
+}
+
+@media print {
+  // this needs to be hyper fined tuned for correct printing
+  @page {
+    size: $A4_width $A4_actual_height;
+  }
+  .A4 {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    padding: 0;
+    // line-height: 18px;
+  }
+}
+
+.resume_page {
+  padding-top: 5rem;
+
+  background: $whitesmoke;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+$headerFont: Roboto, slab-serif;
+$bodyFont: Source Sans Pro;
+.demo_resume {
+  font-family: Source Sans Pro;
+  color: $text;
+  // heading section
+  header {
+    text-align: center;
+    h1 {
+      font-family: $headerFont;
+      font-size: 2.68em;
+    } //display:inline
+    h2[class="section-title"] {
+      color: $text;
+      overflow: hidden;
+      text-align: left;
+    }
+    h2[class="section-title"]:after {
+      background-color: $text;
+      content: "";
+      display: inline-block;
+      height: 0.05em;
+      position: relative;
+      vertical-align: left;
+      width: 100%;
+    }
+    h2[class="section-title"]:after {
+      left: 0em;
+      // height: 0.15em;
+      margin-right: -50%;
+    }
+
+    span[class="first-name"] {
+      font-weight: 100;
+      color: $text;
+    }
+    span[class="last-name"] {
+      font-weight: 900;
+      color: $text;
+    }
+    p[class="position"] {
+      font-family: $bodyFont;
+      font-size: 0.7em;
+    }
+    p[class="location"] {
+      font-family: $bodyFont;
+      color: $light-text;
+      font-size: 0.8em;
+    }
+    span[class="contact-details"] {
+      vertical-align: middle;
+      padding: 0.5em;
+      margin: auto;
+      justify-content: center;
+      align-content: center;
+      color: $text;
+    }
+    span[class="contact"] {
+      vertical-align: middle;
+      padding: 0.25em;
+      // margin: 0 0.25em;
+      font-size: 0.8em;
+      color: $text;
+    }
+    p[class="summary"] {
+      text-align: left;
+    }
+  }
+}

@@ -4,3 +4,10 @@
 
 // react just to make imports cleaner
 declare type FC<P = {}> = React.FunctionComponent<P>;
+declare type Children =
+  | boolean
+  | ReactChild
+  | ReactFragment
+  | ReactPortal
+  | null
+  | undefined;
