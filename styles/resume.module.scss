@@ -81,32 +81,42 @@ $bodyFont: Source Sans Pro;
   font-family: Source Sans Pro;
   color: $text;
   // heading section
+  h1 {
+    font-family: $headerFont;
+    font-size: 2.68em;
+  }
+  h2[class="section-title"] {
+    color: $text;
+    overflow: hidden;
+    text-align: left;
+  }
+  h2[class="section-title"]:after {
+    background-color: $text;
+    content: "";
+    display: inline-block;
+    height: 0.05em;
+    position: relative;
+    vertical-align: left;
+    width: 100%;
+  }
+  h2[class="section-title"]:after {
+    left: 0em;
+    // height: 0.15em;
+    margin-right: -50%;
+  }
+  h3 {
+    display: inline;
+    font-size: 1em;
+  }
+  p[class="float-left"] {
+    float: right;
+  }
+  a[class="plain-link"] {
+    text-decoration: none;
+    color: $text;
+  }
   header {
     text-align: center;
-    h1 {
-      font-family: $headerFont;
-      font-size: 2.68em;
-    } //display:inline
-    h2[class="section-title"] {
-      color: $text;
-      overflow: hidden;
-      text-align: left;
-    }
-    h2[class="section-title"]:after {
-      background-color: $text;
-      content: "";
-      display: inline-block;
-      height: 0.05em;
-      position: relative;
-      vertical-align: left;
-      width: 100%;
-    }
-    h2[class="section-title"]:after {
-      left: 0em;
-      // height: 0.15em;
-      margin-right: -50%;
-    }
-
     span[class="first-name"] {
       font-weight: 100;
       color: $text;
@@ -141,6 +151,17 @@ $bodyFont: Source Sans Pro;
     }
     p[class="summary"] {
       text-align: left;
+    }
+  }
+  section[class="skills-section"] {
+    p[class="familiarity"] {
+      float: right;
+    }
+    p[class="skill-keywords"] {
+      font-size: 0.8em;
+    }
+    p[class="area-of-study"] {
+      display: inline-block;
     }
   }
 }

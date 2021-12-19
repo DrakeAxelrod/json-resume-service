@@ -1,3 +1,4 @@
+import { defaultOrder } from "@lib/constants";
 import json2md from "json2md";
 import YAML from "yaml";
 
@@ -194,18 +195,6 @@ const getReferences = (title: any, references: Reference[]): Reference[] => {
   return data;
 };
 
-const defaultOrder = [
-  "skills",
-  "education",
-  "work experience",
-  "projects",
-  "awards",
-  "publications",
-  "volunteer",
-  "languages",
-  "interests",
-  "references",
-];
 export const json_resume2md = (json: any, order = defaultOrder): string => {
   //console.log(json);
   const meta = getMeta(json);

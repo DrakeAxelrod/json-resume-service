@@ -256,7 +256,7 @@
       "summary": "The course introduces the student to a contemporary object-oriented programming language with associated platforms and environments, with emphasis on basic programming language concepts, object oriented concepts, and elementary data structures.",
       "position": "Teaching Assitant",
       "startDate": "2021-08-01",
-      "website": "https://www.gu.se/en/study-gothenburg/object-oriented-programming-dit043"
+      "url": "https://www.gu.se/en/study-gothenburg/object-oriented-programming-dit043"
     },
     {
       "endDate": "2017-03-14",
@@ -273,7 +273,7 @@
       "position": "Surf Instructor",
       "startDate": "2013-06-01",
       "summary": "LearnToSurfLA is the premier surf school in Los Angeles, Santa Monica, Venice Beach and Manhattan Beach, we are passionate about helping our students experience the thrill of the waves.",
-      "website": "https://www.learntosurfla.com/"
+      "url": "https://www.learntosurfla.com/"
     },
     {
       "endDate": "2019-05-04",
@@ -282,11 +282,12 @@
         "Analyzed sales data and negotiation techniques to leverage client sales.",
         "Attended training seminars for B2B sales"
       ],
+      "summary": "LearnToSurfLA is the premier surf school in Los Angeles, Santa Monica, Venice Beach and Manhattan Beach, we are passionate about helping our students experience the thrill of the waves.",
       "location": "Brisbane, Australia",
       "name": "More Marketing Group",
-      "position": "Independent contractor B2B Sales",
+      "position": "Independent Contractor B2B Sales",
       "startDate": "2019-01-09",
-      "website": "https://www.instagram.com/more_marketing_group/"
+      "url": "https://www.instagram.com/more_marketing_group/"
     }
   ]
 }

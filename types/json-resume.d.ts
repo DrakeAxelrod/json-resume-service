@@ -3,19 +3,19 @@
  * @category JSON Resume
  */
 declare type Basics = {
-  name?: String;
-  label?: String;
-  image?: String;
-  email?: String;
-  phone?: String;
-  url?: String;
-  summary?: String;
+  name?: string;
+  label?: string;
+  image?: string;
+  email?: string;
+  phone?: string;
+  url?: string;
+  summary?: string;
   location?: {
-    address?: String;
-    postalCode?: String;
-    city?: String;
-    countryCode?: String;
-    region?: String;
+    address?: string;
+    postalCode?: string;
+    city?: string;
+    countryCode?: string;
+    region?: string;
   };
   profiles?: Profile[];
 };
@@ -25,9 +25,9 @@ declare type Basics = {
  * @category JSON Resume
  */
 declare type Profile = {
-  network?: String;
-  username?: String;
-  url?: String;
+  network?: string;
+  username?: string;
+  url?: string;
 };
 
 /**
@@ -35,13 +35,14 @@ declare type Profile = {
  * @category JSON Resume
  */
 declare type WorkExperience = {
-  name?: String;
-  position?: String;
-  url?: String;
-  startDate?: String;
-  endDate?: String;
-  summary?: String;
-  highlights?: String[];
+  name?: string;
+  position?: string;
+  url?: string;
+  startDate?: string;
+  endDate?: string;
+  summary?: string;
+  highlights?: string[];
+  url?: string;
 };
 
 /**
@@ -49,13 +50,13 @@ declare type WorkExperience = {
  * @category JSON Resume
  */
 declare type Volunteer = {
-  organization?: String;
-  position?: String;
-  url?: String;
-  startDate?: String;
-  endDate?: String;
-  summary?: String;
-  highlights?: String[];
+  organization?: string;
+  position?: string;
+  url?: string;
+  startDate?: string;
+  endDate?: string;
+  summary?: string;
+  highlights?: string[];
 };
 
 /**
@@ -63,14 +64,14 @@ declare type Volunteer = {
  * @category JSON Resume
  */
 declare type Education = {
-  institution?: String;
-  url?: String;
-  area?: String;
-  studyType?: String;
-  startDate?: String;
-  endDate?: String;
-  score?: String;
-  courses?: String[];
+  institution?: string;
+  url?: string;
+  area?: string;
+  studyType?: string;
+  startDate?: string;
+  endDate?: string;
+  score?: string;
+  courses?: string[];
 };
 
 /**
@@ -78,10 +79,10 @@ declare type Education = {
  * @category JSON Resume
  */
 declare type Award = {
-  title?: String;
-  date?: String;
-  awarder?: String;
-  summary?: String;
+  title?: string;
+  date?: string;
+  awarder?: string;
+  summary?: string;
 };
 
 /**
@@ -89,11 +90,11 @@ declare type Award = {
  * @category JSON Resume
  */
 declare type Publication = {
-  name?: String;
-  publisher?: String;
-  releaseDate?: String;
-  url?: String;
-  summary?: String;
+  name?: string;
+  publisher?: string;
+  releaseDate?: string;
+  url?: string;
+  summary?: string;
 };
 
 /**
@@ -101,9 +102,9 @@ declare type Publication = {
  * @category JSON Resume
  */
 declare type Skill = {
-  name?: String;
-  level?: String;
-  keywords?: String[];
+  name?: string;
+  level?: string;
+  keywords?: string[];
 };
 
 /**
@@ -117,8 +118,8 @@ declare type Skill = {
  * @category JSON Resume
  */
 declare type Language = {
-  language?: String;
-  fluency?: String;
+  language?: string;
+  fluency?: string;
 };
 
 /**
@@ -126,8 +127,8 @@ declare type Language = {
  * @category JSON Resume
  */
 declare type Interest = {
-  name?: String;
-  keywords?: String[];
+  name?: string;
+  keywords?: string[];
 };
 
 /**
@@ -135,8 +136,8 @@ declare type Interest = {
  * @category JSON Resume
  */
 declare type Reference = {
-  name?: String;
-  reference?: String;
+  name?: string;
+  reference?: string;
 };
 
 /**
@@ -144,16 +145,16 @@ declare type Reference = {
  * @category JSON Resume
  */
 declare type Project = {
-  name?: String;
-  description?: String;
-  highlights?: String[];
-  keywords?: String[];
-  startDate?: String;
-  endDate?: String;
-  url?: String;
-  roles?: String[];
-  entity?: String;
-  type?: String;
+  name?: string;
+  description?: string;
+  highlights?: string[];
+  keywords?: string[];
+  startDate?: string;
+  endDate?: string;
+  url?: string;
+  roles?: string[];
+  entity?: string;
+  type?: string;
 };
 
 /**
