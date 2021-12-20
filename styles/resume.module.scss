@@ -24,12 +24,6 @@ $awesome-concrete: #95a5a6;
 $awesome-dark-night: #131a28;
 $awesome: $awesome-red;
 
-// Text colors
-$dark-text: #414141;
-$text: $darkgray;
-$gray-text: $gray;
-$light-text: $lightgray;
-
 // shadow :P
 $shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 // a4 properties
@@ -46,20 +40,20 @@ $h1: 2.68em;
 $h2: 1.8em;
 $h3: 1.1em;
 $h4: 0.75em;
-$xxl: 0.8em;
-$xl: 0.8em;
-$lg: 0.8em;
-$md: 0.8em;
-$sm: 0.8em;
+$xxl: 1.5em;
+$xl: 1.2em;
+$lg: 1.1em;
+$md: 1em;
+$sm: 0.875em;
 $xs: 0.8em;
 
 // font-colors
+$dark-text: #414141;
+$text: $darkgray;
+$gray-text: $gray;
+$light-text: $lightgray;
 $title: $text; // might not need rest
-$h1-color: $text;
-$h2-color: $text;
-$h3-color: $text;
-$h4-color: $text;
-$default: $dark-text;
+$default: $text;
 
 // @mixin h1 {
 //   font-family: $headerFont;
@@ -79,7 +73,7 @@ $default: $dark-text;
   -webkit-box-shadow: $shadow;
 }
 
-.resume_page {
+.resume-page {
   padding-top: 5rem;
   font-size: $md;
   background: $whitesmoke;
@@ -89,147 +83,174 @@ $default: $dark-text;
 
 .resume {
   font-family: $bodyFont;
-  color: $dark-text;
-  // heading section
-  h1 {
-    font-family: $headerFont;
-    font-size: $h1;
-    color: $title;
-  }
-  h2 {
-    font-family: $headerFont;
-    font-size: 1.8em;
-    color: $title;
-  }
-  h3 {
-    font-family: $headerFont;
-    font-size: $h3;
-    color: $text;
-    display: inline;
-  }
-  h4 {
-    font-family: $headerFont;
-    font-size: $h4;
-    text-transform: uppercase;
-  }
-  // p {
+  font-weight: normal;
+  color: $default;
+  line-height: 1.1;
 
-  // }
-  ul {
-    line-height: 1.5;
-    font-size: $sm;
-  }
-  h2[class="section-title"] {
-    overflow: hidden;
-    text-align: left;
-  }
-  h2[class="section-title"]:after {
-    background-color: $title;
-    content: "";
-    display: inline-block;
-    height: 0px;
-    position: relative;
-    vertical-align: left;
-    width: 100%;
-  }
-  h2[class="section-title"]:after {
-    background-color: $title;
-    left: 0em;
-    height: 2px;
-    margin-right: -50%;
-  }
-  p[class="date"] {
-    font-style: italic;
-    padding-top: 0.125em;
-    vertical-align: bottom;
-    float: right;
-    font-size: 0.75em;
-  }
-  span[class="date"] {
-    font-style: italic;
-    padding-top: 0.125em;
-    vertical-align: bottom;
-    float: right;
-    font-size: $xs;
-  }
-  p[class="keywords"] {
-    font-size: $sm;
-    color: $light-text;
-  }
-  a[class="plain-link"] {
-    text-decoration: none;
-    color: $text;
-  }
   header {
     text-align: center;
-    span[class="first-name"] {
-      font-weight: 100;
-      color: $title;
-    }
-    span[class="last-name"] {
-      font-weight: 900;
-      color: $title;
-    }
-    p[class="position"] {
-      font-family: $bodyFont;
-      font-size: $sm;
-    }
-    p[class="location"] {
-      font-family: $bodyFont;
-      color: $light-text;
-      font-size: $md;
-    }
-    span[class="contact-details"] {
-      vertical-align: middle;
-      padding: 0.5em;
-      margin: auto;
-      justify-content: center;
-      align-content: center;
-      color: $text;
-    }
-    span[class="contact"] {
-      vertical-align: middle;
-      padding: 0.25em;
-      // margin: 0 0.25em;
-      font-size: $md;
-      color: $text;
-    }
-    p[class="summary"] {
-      text-align: left;
-    }
+    line-height: 1.5;
+    // span[class="contact-details"] {
+    //   vertical-align: middle;
+    //   padding: 0.5em;
+    //   margin: auto;
+    //   justify-content: center;
+    //   align-content: center;
+    //   color: $text;
+    // }
+    // span[class="contact"] {
+    //   vertical-align: middle;
+    //   padding: 0.25em;
+    //   // margin: 0 0.25em;
+    //   font-size: $md;
+    //   color: $text;
+    // }
   }
-  // section[class="skills"] {
+  // section {
+  //   padding: 0.25em 0;
   // }
-  section[class="education"] {
-    span[class="area"] {
-      color: $light-text;
-      font-weight: normal;
-    }
+}
+
+.title {
+  font-family: $headerFont;
+  font-size: $h1;
+  color: $title;
+}
+
+.first-name {
+  font-weight: 100;
+  color: $title;
+}
+.last-name {
+  font-weight: 900;
+  color: $title;
+}
+
+.position {
+  font-family: $bodyFont;
+  font-size: $md;
+}
+
+.location {
+  font-family: $bodyFont;
+  color: $light-text;
+  font-size: $md;
+}
+
+.contact {
+  vertical-align: middle;
+  font-size: $md;
+  padding: 0 0.5em 0.5em 0;
+  span {
+    vertical-align: middle;
+    padding: 0.4em;
+    margin: auto;
   }
-  section[class="work"] {
-    span[class="work-description"] {
-      font-weight: normal;
-      color: $light-text;
-    }
+  a, i {
+    vertical-align: middle;
+    padding: 0.5em;
+    margin: auto;
+    font-size: 0.6em;
+    width: 2.25em;
+    min-width: 2em;
+    min-height: 2em;
+    text-align: center;
+    text-decoration: none;
+    background: black;
+    color: white;
   }
-  // section[class="projects"] {
-  // }
-  // section[class="awards"] {
-  // }
-  // section[class="publications"] {
-  // }
-  // section[class="volunteer"] {
-  // }
-  // section[class="languages"] {
-  // }
-  section[class="interests"] {
-    span[class="keywords"] {
-      font-weight: normal;
-    }
+  a:hover, i:hover {
+  opacity: 0.7;
+}
+}
+
+.summary {
+  padding: 0.5em 0;
+  text-align: left;
+}
+
+
+.section-title {
+  line-height: 1.5;
+  font-family: $headerFont;
+  font-size: $xxl;
+  font-weight: bold;
+  color: $title;
+  overflow: hidden;
+  text-align: left;
+}
+.section-title:after {
+  background-color: $title;
+  content: "";
+  display: inline-block;
+  height: 2px;
+  position: relative;
+  vertical-align: left;
+  width: 100%;
+}
+
+.section-title:after {
+  background-color: $title;
+  left: 0;
+  height: 2px;
+  margin-right: -50%;
+}
+
+.section-heading-1 {
+  display: inline;
+  line-height: 1.5;
+  font-weight: 500;
+  font-family: $headerFont;
+  font-size: $xl;
+  color: $text;
+  span,
+  p {
+    font-weight: normal;
+    color: $gray-text;
   }
-  section[class="references"] {
-    p[class="area-of-study"] {
-      display: inline-block;
-    }
+}
+
+.section-heading-2 {
+  text-transform: uppercase;
+  line-height: 1.5;
+  font-weight: 300;
+  font-family: $headerFont;
+  font-size: $xs;
+  color: $text;
+  span,
+  p {
+    font-weight: normal;
+    color: $gray-text;
   }
+}
+
+.section-summary {
+  padding-bottom: 0.4em;
+  padding-top: 0.1em;
+}
+
+$meta-padding: $xxl - $sm;
+.left-meta {
+  position: relative;
+  font-style: italic;
+  vertical-align: center;
+  padding-top: $meta-padding;
+  float: right;
+  font-size: $sm;
+  text-align: right;
+}
+
+.list {
+  font-size: $md;
+  list-style-type: square;
+}
+
+.keywords {
+  font-size: $sm;
+  color: $gray-text;
+}
+
+.plain-link {
+  text-decoration: none;
+  color: $text
 }

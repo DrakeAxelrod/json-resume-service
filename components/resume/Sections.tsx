@@ -1,5 +1,31 @@
 import { formatDate, generateDateRange, setHttps } from "@utils/string-parsers";
 import { SectionTitle } from "./SectionTitle";
+import styles from "@styles/resume.module.scss";
+import { Link } from "./Link";
+
+// helpers
+type HeadingProps = {
+  children: Children;
+  level: 1 | 2 | 3;
+};
+
+const Heading: FC<HeadingProps> = ({ children, level }) => {
+  return <h3 className={styles[`section-heading-${level}`]}>{children}</h3>;
+};
+
+type ListProps = {
+  highlights?: any[];
+};
+
+const List: FC<ListProps> = ({ highlights }) => {
+  return (
+    <ul className={styles.list}>
+      {highlights?.map((highlight: string, i: number) => {
+        return <li key={i}>{highlight}</li>;
+      })}
+    </ul>
+  );
+};
 
 const SkillsSection: FC<ResumeSectionProps> = ({ name, resume }) => {
   return (
@@ -8,9 +34,9 @@ const SkillsSection: FC<ResumeSectionProps> = ({ name, resume }) => {
       {resume.skills?.map((skill: Skill, i: number) => {
         return (
           <div key={i}>
-            <h3>{skill.name}</h3>
+            <Heading level={1}>{skill.name}</Heading>
             {/* <p className="familiarity">{skill.level}</p> */}
-            <p className="keywords">
+            <p className={styles.keywords}>
               {skill.keywords?.join(", ").toLowerCase()}
             </p>
           </div>
@@ -27,14 +53,14 @@ const EducationSection: FC<ResumeSectionProps> = ({ name, resume }) => {
       {resume.education?.map((edu: Education, i: number) => {
         return (
           <div key={i}>
-            <h3>
+            <Heading level={1}>
               {edu.institution}{" "}
               <span className="area">
                 {edu.area ? `- ${edu.area}` : ""}
                 {edu.studyType ? `, ${edu.studyType}` : ""}
               </span>
-            </h3>
-            <p className="date">{generateDateRange(edu)}</p>
+            </Heading>
+            <p className={styles["left-meta"]}>{generateDateRange(edu)}</p>
             <br />
             {/* <p className="courses">{edu.courses?.join(", ")}</p> */}
           </div>
@@ -51,32 +77,22 @@ const WorkSection: FC<ResumeSectionProps> = ({ name, resume }) => {
       {resume.work?.map((work: WorkExperience, i: number) => {
         return (
           <div key={i}>
-            <h3>
-              <a
-                className="plain-link"
-                href={setHttps(work.url)}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {work.name}
-              </a>
+            <Heading level={1}>
+              <Link url={work.url}>{work.name}</Link>
               <span className="work-description">
                 {work.description ? ` - ${work.description}` : ""}
               </span>
-            </h3>
-            <p className="date">
+            </Heading>
+            <p className={styles["left-meta"]}>
               {generateDateRange(work)}
-              <br />
-              <span className="date">{work.location}</span>
+              <span>
+                <br />
+                {work.location}
+              </span>
             </p>
-            <br />
-            <h4>{work.position}</h4>
-            <p>{work.summary}</p>
-            <ul>
-              {work.highlights?.map((highlight: string, i: number) => {
-                return <li key={i}>{highlight}</li>;
-              })}
-            </ul>
+            <Heading level={2}>{work.position}</Heading>
+            <p className={styles["section-summary"]}>{work.summary}</p>
+            <List highlights={work.highlights} />
           </div>
         );
       })}
@@ -91,33 +107,22 @@ const ProjectsSection: FC<ResumeSectionProps> = ({ name, resume }) => {
       {resume.projects?.map((project, i: number) => {
         return (
           <div key={i}>
-            <h3>
-              <a
-                className="plain-link"
-                href={setHttps(project.url)}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {project.name}
-              </a>
-            </h3>
-            <p className="date">
+            <Heading level={1}>
+              <Link url={project.url}>{project.name}</Link>
+            </Heading>
+            <p className={styles["left-meta"]}>
               {generateDateRange(project)}
               <br />
-              <span className="date">
+              <span>
                 {project.entity ? `${project.entity} - ` : ""}
                 {project.type}
               </span>
             </p>
             <br />
-            <h4>{project.roles?.join(", ")}</h4>
-            <p>{project.description}</p>
-            <ul>
-              {project.highlights?.map((highlight: string, i: number) => {
-                return <li key={i}>{highlight}</li>;
-              })}
-            </ul>
-            <p className="keywords">{project.keywords?.join(", ")}</p>
+            <Heading level={2}>{project.roles?.join(", ")}</Heading>
+            <p className={styles["section-summary"]}>{project.description}</p>
+            <List highlights={project.highlights} />
+            <p className={styles.keywords}>{project.keywords?.join(", ")}</p>
           </div>
         );
       })}
@@ -132,13 +137,13 @@ const AwardsSection: FC<ResumeSectionProps> = ({ name, resume }) => {
       {resume.awards?.map((award, i: number) => {
         return (
           <div key={i}>
-            <h3>{award.title}</h3>
-            <p className="date">
+            <Heading level={1}>{award.title}</Heading>
+            <p className={styles["left-meta"]}>
               {formatDate(award.date)}
               <br />
-              <span className="date">{award.awarder}</span>
+              <span>{award.awarder}</span>
             </p>
-            <p>{award.summary}</p>
+            <p className={styles["section-summary"]}>{award.summary}</p>
           </div>
         );
       })}
@@ -153,22 +158,15 @@ const PublicationsSection: FC<ResumeSectionProps> = ({ name, resume }) => {
       {resume.publications?.map((publication, i: number) => {
         return (
           <div key={i}>
-            <h3>
-              <a
-                className="plain-link"
-                href={setHttps(publication.url)}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {publication.name}
-              </a>
-            </h3>
-            <p className="date">
+            <Heading level={1}>
+              <Link url={publication.url}>{publication.name}</Link>
+            </Heading>
+            <p className={styles["left-meta"]}>
               {formatDate(publication.releaseDate)}
               <br />
-              <span className="date">{publication.publisher}</span>
+              <span>{publication.publisher}</span>
             </p>
-            <p>{publication.summary}</p>
+            <p className={styles["section-summary"]}>{publication.summary}</p>
           </div>
         );
       })}
@@ -182,24 +180,15 @@ const VolunteerSection: FC<ResumeSectionProps> = ({ name, resume }) => {
       {resume.volunteer?.map((volunteer, i: number) => {
         return (
           <div key={i}>
-            <h3>
-              <a
-                className="plain-link"
-                href={setHttps(volunteer.url)}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {volunteer.organization}
-              </a>
-            </h3>
-            <p className="date">{generateDateRange(volunteer)}</p>
-            <h4>{volunteer.position}</h4>
-            <p>{volunteer.summary}</p>
-            <ul>
-              {volunteer.highlights?.map((highlight: string, i: number) => {
-                return <li key={i}>{highlight}</li>;
-              })}
-            </ul>
+            <Heading level={1}>
+              <Link url={volunteer.url}>{volunteer.organization}</Link>
+            </Heading>
+            <p className={styles["left-meta"]}>
+              {generateDateRange(volunteer)}
+            </p>
+            <Heading level={2}>{volunteer.position}</Heading>
+            <p className={styles["section-summary"]}>{volunteer.summary}</p>
+            <List highlights={volunteer.highlights} />
           </div>
         );
       })}

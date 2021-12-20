@@ -1,4 +1,5 @@
 import { SectionTitle } from "./SectionTitle";
+import styles from "@styles/resume.module.scss";
 
 type ResumeFooterProps = {
   resume: Resume;

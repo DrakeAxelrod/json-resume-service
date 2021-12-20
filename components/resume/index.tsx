@@ -15,7 +15,7 @@ export const Resume: FC<Props> = ({ resume, order=defaultOrder}) => {
     .filter((e) => keys.includes(e))
     .map((e, i) => section(e, resume, i));
   return (
-    <section className={styles.resume_page}>
+    <section className={styles["resume-page"]}>
       <article className={`${styles.A4} ${styles.resume}`}>
         <ResumeHeader resume={resume} />
         {sections}

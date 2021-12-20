@@ -1,66 +1,77 @@
 import { formatPhoneNumber } from "@utils/string-parsers";
 import { CountryCode } from "libphonenumber-js";
 import { SectionTitle } from "./SectionTitle";
+import styles from "@styles/resume.module.scss";
+import { Exists } from "./Exists";
+import { Link } from "./Link";
 
 type ResumeHeaderProps = {
   resume: Resume;
 };
 
+const Title: FC<ResumeHeaderProps> = ({ resume }) => {
+  return (
+    <h1 className={styles.title}>
+      <span className={styles["first-name"]}>
+        {resume.basics?.name?.split(" ")[0]}{" "}
+      </span>
+      <span className={styles["last-name"]}>
+        {resume.basics?.name?.split(" ")[1]}
+      </span>
+    </h1>
+  );
+};
+
 export const ResumeHeader: FC<ResumeHeaderProps> = ({ resume }) => {
   return (
     <header>
-      <h1>
-        <span className="first-name">
-          {resume.basics?.name?.split(" ")[0]}{" "}
-        </span>
-        <span className="last-name">{resume.basics?.name?.split(" ")[1]}</span>
-      </h1>
+      <Title resume={resume} />
       {/* need to define a way to this in case they dont provide this */}
-      <p className="position">{resume.basics?.label}</p>
+      <p className={styles.position}>{resume.basics?.label}</p>
       {/* need to define a way to this in case they dont provide this */}
-      <p className="location">{`${resume.basics?.location?.city}, ${resume.basics?.location?.region} ${resume.basics?.location?.countryCode}`}</p>
-      <p className="contact-details">
-        {resume.basics?.phone ? (
-          <>
-            <i className="fas fa-phone"></i>
-            <span className="contact">
-              {formatPhoneNumber(
-                resume.basics?.phone,
-                resume.basics?.location?.countryCode as CountryCode
-              )}
-            </span>
-          </>
-        ) : null}
-        {resume.basics?.email ? (
-          <>
+      <p
+        className={styles.location}
+      >{`${resume.basics?.location?.city}, ${resume.basics?.location?.region} ${resume.basics?.location?.countryCode}`}</p>
+      <p className={styles.contact}>
+        <Exists exists={resume.basics?.phone}>
+          <span>
+            <i className="fas fa-phone"></i>{" "}
+            {formatPhoneNumber(
+              resume.basics?.phone,
+              resume.basics?.location?.countryCode as CountryCode
+            )}
+          </span>
+        </Exists>
+        <Exists exists={resume.basics?.email}>
+          <span>
             <a
               className="fas fa-envelope"
               href={`mailto: ${resume.basics?.email}`}
               target="_blank"
               rel="noreferrer"
-            ></a>
-            <span className="contact">{resume.basics?.email}</span>
-          </>
-        ) : null}
+            ></a>{" "}
+            {resume.basics?.email}
+          </span>
+        </Exists>
         {resume.basics?.profiles?.map((profile, i) => {
           return (
             <span key={i}>
               <a
                 target="_blank"
                 rel="noreferrer"
-                className={`fa fa-${profile.network}`}
+                className={`fa fa-${profile.network?.toLowerCase()}`}
                 href={`${profile.url}`}
                 aria-label={`${profile.network}`}
-              ></a>
-              <span className="contact">{profile.username}</span>
+              ></a>{" "}
+              {profile.username}
             </span>
           );
         })}
       </p>
       <SectionTitle input={"Summary"} />
-      {resume.basics?.summary ? (
-        <p className="summary">{resume.basics?.summary}</p>
-      ) : null}
+      <Exists exists={resume.basics?.summary}>
+        <p className={styles.summary}>{resume.basics?.summary}</p>
+      </Exists>
     </header>
   );
 };
