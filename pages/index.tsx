@@ -12,7 +12,7 @@ const Home: FC = () => {
     const getResume = async () => {
       // const { data } = await axios.get("http://localhost:3000/api/github/gists/DrakeAxelrod")
       //const { data } = await axios.get("http://localhost:3000/api/sample");
-      const { data } = await axios.get("http://json-resume.vercel.app/api/sample");
+      const { data } = await axios.get("https://json-resume.vercel.app/api/sample");
       setResume(data);
     };
     getResume();
