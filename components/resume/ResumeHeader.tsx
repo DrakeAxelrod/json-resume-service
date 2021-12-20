@@ -1,4 +1,5 @@
 import { formatPhoneNumber } from "@utils/string-parsers";
+import { CountryCode } from "libphonenumber-js";
 import { SectionTitle } from "./SectionTitle";
 
 type ResumeHeaderProps = {
@@ -23,7 +24,10 @@ export const ResumeHeader: FC<ResumeHeaderProps> = ({ resume }) => {
           <>
             <i className="fas fa-phone"></i>
             <span className="contact">
-              {formatPhoneNumber(resume.basics?.phone)}
+              {formatPhoneNumber(
+                resume.basics?.phone,
+                resume.basics?.location?.countryCode as CountryCode
+              )}
             </span>
           </>
         ) : null}
@@ -40,19 +44,16 @@ export const ResumeHeader: FC<ResumeHeaderProps> = ({ resume }) => {
         ) : null}
         {resume.basics?.profiles?.map((profile, i) => {
           return (
-            <>
+            <span key={i}>
               <a
-                key={i}
                 target="_blank"
                 rel="noreferrer"
                 className={`fa fa-${profile.network}`}
                 href={`${profile.url}`}
                 aria-label={`${profile.network}`}
               ></a>
-              <span className="contact" key={i}>
-                {profile.username}
-              </span>
-            </>
+              <span className="contact">{profile.username}</span>
+            </span>
           );
         })}
       </p>

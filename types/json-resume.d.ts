@@ -36,6 +36,8 @@ declare type Profile = {
  */
 declare type WorkExperience = {
   name?: string;
+  location?: string;
+  description?: string;
   position?: string;
   url?: string;
   startDate?: string;

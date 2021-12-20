@@ -36,7 +36,36 @@ $shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 $A4_actual_height: 297mm;
 $A4_height: 100%;
 $A4_width: 210mm;
+
 // fonts
+// add fallbacks
+$headerFont: Roboto;
+$bodyFont: Source Sans Pro;
+// sizes
+$h1: 2.68em;
+$h2: 1.8em;
+$h3: 1.1em;
+$h4: 0.75em;
+$xxl: 0.8em;
+$xl: 0.8em;
+$lg: 0.8em;
+$md: 0.8em;
+$sm: 0.8em;
+$xs: 0.8em;
+
+// font-colors
+$title: $text; // might not need rest
+$h1-color: $text;
+$h2-color: $text;
+$h3-color: $text;
+$h4-color: $text;
+$default: $dark-text;
+
+// @mixin h1 {
+//   font-family: $headerFont;
+//   font-size: $h1;
+//   color: $title;
+// }
 
 .A4 {
   margin: 0 auto;
@@ -52,46 +81,62 @@ $A4_width: 210mm;
 
 .resume_page {
   padding-top: 5rem;
-
+  font-size: $md;
   background: $whitesmoke;
   min-height: 100vh;
   min-width: 100vw;
 }
 
-// add fallbacks
-$headerFont: Roboto, slab-serif;
-$bodyFont: Source Sans Pro;
-
 .resume {
   font-family: $bodyFont;
-  color: $text;
+  color: $dark-text;
   // heading section
   h1 {
     font-family: $headerFont;
-    font-size: 2.68em;
+    font-size: $h1;
+    color: $title;
+  }
+  h2 {
+    font-family: $headerFont;
+    font-size: 1.8em;
+    color: $title;
+  }
+  h3 {
+    font-family: $headerFont;
+    font-size: $h3;
+    color: $text;
+    display: inline;
+  }
+  h4 {
+    font-family: $headerFont;
+    font-size: $h4;
+    text-transform: uppercase;
+  }
+  // p {
+
+  // }
+  ul {
+    line-height: 1.5;
+    font-size: $sm;
   }
   h2[class="section-title"] {
-    color: $text;
     overflow: hidden;
     text-align: left;
   }
   h2[class="section-title"]:after {
-    background-color: $text;
+    background-color: $title;
     content: "";
     display: inline-block;
-    height: 0.05em;
+    height: 0px;
     position: relative;
     vertical-align: left;
     width: 100%;
   }
   h2[class="section-title"]:after {
+    background-color: $title;
     left: 0em;
-    // height: 0.15em;
+    height: 2px;
     margin-right: -50%;
-  }
-  h3 {
-    display: inline;
-    font-size: 1em;
   }
   p[class="date"] {
     font-style: italic;
@@ -100,32 +145,39 @@ $bodyFont: Source Sans Pro;
     float: right;
     font-size: 0.75em;
   }
+  span[class="date"] {
+    font-style: italic;
+    padding-top: 0.125em;
+    vertical-align: bottom;
+    float: right;
+    font-size: $xs;
+  }
+  p[class="keywords"] {
+    font-size: $sm;
+    color: $light-text;
+  }
   a[class="plain-link"] {
     text-decoration: none;
     color: $text;
-  }
-  ul {
-    line-height: 1.5;
-    list-style-type: square;
   }
   header {
     text-align: center;
     span[class="first-name"] {
       font-weight: 100;
-      color: $text;
+      color: $title;
     }
     span[class="last-name"] {
       font-weight: 900;
-      color: $text;
+      color: $title;
     }
     p[class="position"] {
       font-family: $bodyFont;
-      font-size: 0.7em;
+      font-size: $sm;
     }
     p[class="location"] {
       font-family: $bodyFont;
       color: $light-text;
-      font-size: 0.8em;
+      font-size: $md;
     }
     span[class="contact-details"] {
       vertical-align: middle;
@@ -139,22 +191,43 @@ $bodyFont: Source Sans Pro;
       vertical-align: middle;
       padding: 0.25em;
       // margin: 0 0.25em;
-      font-size: 0.8em;
+      font-size: $md;
       color: $text;
     }
     p[class="summary"] {
       text-align: left;
     }
   }
-  section[class="skills-section"] {
-    p[class="familiarity"] {
-      float: right;
-    }
-    p[class="skill-keywords"] {
-      font-size: 0.8em;
+  // section[class="skills"] {
+  // }
+  section[class="education"] {
+    span[class="area"] {
+      color: $light-text;
+      font-weight: normal;
     }
   }
-  section[class="education-section"] {
+  section[class="work"] {
+    span[class="work-description"] {
+      font-weight: normal;
+      color: $light-text;
+    }
+  }
+  // section[class="projects"] {
+  // }
+  // section[class="awards"] {
+  // }
+  // section[class="publications"] {
+  // }
+  // section[class="volunteer"] {
+  // }
+  // section[class="languages"] {
+  // }
+  section[class="interests"] {
+    span[class="keywords"] {
+      font-weight: normal;
+    }
+  }
+  section[class="references"] {
     p[class="area-of-study"] {
       display: inline-block;
     }

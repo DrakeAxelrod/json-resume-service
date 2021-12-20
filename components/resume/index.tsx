@@ -6,14 +6,14 @@ import { ResumeFooter } from "./ResumeFooter"
 
 type Props = { 
   resume: Resume;
-  order: string[];
+  order?: string[];
 }
 
-export const Resume: FC<Props> = ({ resume, order=defaultOrder }) => {
+export const Resume: FC<Props> = ({ resume, order=defaultOrder}) => {
   const keys = Object.keys(resume);
   const sections = order
     .filter((e) => keys.includes(e))
-    .map((e) => section(e, resume));
+    .map((e, i) => section(e, resume, i));
   return (
     <section className={styles.resume_page}>
       <article className={`${styles.A4} ${styles.resume}`}>

@@ -3,13 +3,14 @@ import { GetStaticProps } from "next";
 import { Resume } from "@components/resume/index"
 import { FC, useEffect, useState } from 'react';
 import axios from 'axios';
+import { defaultOrder } from "@lib/constants";
 
 const Home: FC = () => {
   const [resume, setResume] = useState({} as Resume);
   useEffect(() => {
     // Run! Like go get some data from an API.
     const getResume = async () => {
-      const { data } = await axios.get("http://localhost:3000/api/github/gists/DrakeAxelrod");
+      const { data } = await axios.get("http://localhost:3000/api/sample");
       setResume(data);
     };
     getResume();
