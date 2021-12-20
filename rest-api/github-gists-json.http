@@ -1,0 +1,10 @@
+
+@baseURL = http://localhost:3000
+
+GET {{baseURL}}/api/github/gists/json HTTP/1.1
+content-type: application/json
+
+{
+    "username": "DrakeAxelrod",
+    "gistID": "33726f328fa7d66f781f6408aac9c20e"
+}

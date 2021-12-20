@@ -1,6 +1,8 @@
+// pages/api/index.ts
+
 import { NextApiRequest, NextApiResponse } from "next";
 // import fs from "fs";
-import { getPDF } from "../../lib/chromium";
+import { getPDF } from "./chromium";
 
 const isDev = process.env.NODE_ENV === "development";
 

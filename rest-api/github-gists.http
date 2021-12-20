@@ -1,0 +1,8 @@
+@baseURL = http://localhost:3000
+
+GET {{baseURL}}/api/test HTTP/1.1
+content-type: application/json
+
+{
+    "username": "DrakeAxelrod",
+}
