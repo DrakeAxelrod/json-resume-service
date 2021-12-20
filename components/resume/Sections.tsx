@@ -1,7 +1,8 @@
-import { formatDate, generateDateRange, setHttps } from "@utils/string-parsers";
+import { capitalize, formatDate, generateDateRange, setHttps } from "@utils/string-parsers";
 import { SectionTitle } from "./SectionTitle";
 import styles from "@styles/resume.module.scss";
 import { Link } from "./Link";
+import { Exists } from "./Exists";
 
 // helpers
 type HeadingProps = {
@@ -21,7 +22,7 @@ const List: FC<ListProps> = ({ highlights }) => {
   return (
     <ul className={styles.list}>
       {highlights?.map((highlight: string, i: number) => {
-        return <li key={i}>{highlight}</li>;
+        return <li key={i}>{capitalize(highlight)}</li>;
       })}
     </ul>
   );
@@ -51,6 +52,7 @@ const EducationSection: FC<ResumeSectionProps> = ({ name, resume }) => {
     <section className="education">
       <SectionTitle input={name} />
       {resume.education?.map((edu: Education, i: number) => {
+        const dateRange = generateDateRange(edu);
         return (
           <div key={i}>
             <Heading level={1}>
@@ -60,8 +62,7 @@ const EducationSection: FC<ResumeSectionProps> = ({ name, resume }) => {
                 {edu.studyType ? `, ${edu.studyType}` : ""}
               </span>
             </Heading>
-            <p className={styles["left-meta"]}>{generateDateRange(edu)}</p>
-            <br />
+            <p className={styles["left-meta"]}>{dateRange}</p>
             {/* <p className="courses">{edu.courses?.join(", ")}</p> */}
           </div>
         );
@@ -79,9 +80,9 @@ const WorkSection: FC<ResumeSectionProps> = ({ name, resume }) => {
           <div key={i}>
             <Heading level={1}>
               <Link url={work.url}>{work.name}</Link>
-              <span className="work-description">
+              {/* <span className="work-description">
                 {work.description ? ` - ${work.description}` : ""}
-              </span>
+              </span> */}
             </Heading>
             <p className={styles["left-meta"]}>
               {generateDateRange(work)}
@@ -91,7 +92,7 @@ const WorkSection: FC<ResumeSectionProps> = ({ name, resume }) => {
               </span>
             </p>
             <Heading level={2}>{work.position}</Heading>
-            <p className={styles["section-summary"]}>{work.summary}</p>
+            {/* <p className={styles["section-summary"]}>{work.summary}</p> */}
             <List highlights={work.highlights} />
           </div>
         );
@@ -120,9 +121,9 @@ const ProjectsSection: FC<ResumeSectionProps> = ({ name, resume }) => {
             </p>
             <br />
             <Heading level={2}>{project.roles?.join(", ")}</Heading>
-            <p className={styles["section-summary"]}>{project.description}</p>
+            {/* <p className={styles["section-summary"]}>{project.description}</p> */}
+            {/* <p className={styles.keywords}>{project.keywords?.join(", ")}</p> */}
             <List highlights={project.highlights} />
-            <p className={styles.keywords}>{project.keywords?.join(", ")}</p>
           </div>
         );
       })}
@@ -206,7 +207,7 @@ export const section = (name: string, resume: Resume, i: number) => {
     case "education":
       return <EducationSection name={name} resume={resume} key={i} />;
     case "work":
-      return <WorkSection name={name} resume={resume} key={i} />;
+      return <WorkSection name={name + " experience"} resume={resume} key={i} />;
     case "projects":
       return <ProjectsSection name={name} resume={resume} key={i} />;
     case "awards":

@@ -1,5 +1,6 @@
 import { SectionTitle } from "./SectionTitle";
 import styles from "@styles/resume.module.scss";
+import { Exists } from "./Exists";
 
 type ResumeFooterProps = {
   resume: Resume;
@@ -13,7 +14,7 @@ const LanguagesSection: FC<ResumeSectionProps> = ({ name, resume }) => {
         return (
           <p key={i}>
             {lang.language}
-            <span className="keywords">
+            <span className={styles.keywords}>
               {lang.fluency ? ` - ${lang.fluency}` : ""}
             </span>
           </p>
@@ -24,10 +25,12 @@ const LanguagesSection: FC<ResumeSectionProps> = ({ name, resume }) => {
 };
 
 const InterestsSection: FC<ResumeSectionProps> = ({ name, resume }) => {
+  const interests = resume.interests?.map(interest => interest.name).join(", ")
   return (
     <section className="interests">
       <SectionTitle input={name} />
-      {resume.interests?.map((interest, i: number) => {
+      <p>{interests}</p>
+      {/* {resume.interests?.map((interest, i: number) => {
         return (
           <div key={i}>
             {interest.name}
@@ -36,12 +39,13 @@ const InterestsSection: FC<ResumeSectionProps> = ({ name, resume }) => {
             </span>
           </div>
         );
-      })}
+      })} */}
     </section>
   );
 };
 
 const ReferencesSection: FC<ResumeSectionProps> = ({ name, resume }) => {
+  console.log(resume.references)
   return (
     <section className="references">
       <SectionTitle input={name} />
@@ -60,9 +64,15 @@ const ReferencesSection: FC<ResumeSectionProps> = ({ name, resume }) => {
 export const ResumeFooter: FC<ResumeFooterProps> = ({ resume }) => {
   return (
     <footer>
-      <LanguagesSection name={"languages"} resume={resume} />
-      <InterestsSection name={"interests"} resume={resume} />
-      <ReferencesSection name={"References"} resume={resume} />
+      <Exists exists={resume.languages}>
+        <LanguagesSection name={"languages"} resume={resume} />
+      </Exists>
+      <Exists exists={resume.interests}>
+        <InterestsSection name={"interests"} resume={resume} />
+      </Exists>
+      <Exists exists={resume.references}>
+        <ReferencesSection name={"References"} resume={resume} />
+      </Exists>
     </footer>
   );
 };

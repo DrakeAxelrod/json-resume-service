@@ -33,6 +33,9 @@ export const ResumeHeader: FC<ResumeHeaderProps> = ({ resume }) => {
         className={styles.location}
       >{`${resume.basics?.location?.city}, ${resume.basics?.location?.region} ${resume.basics?.location?.countryCode}`}</p>
       <p className={styles.contact}>
+        <Exists exists={resume.basics?.url}>
+          <p>{resume.basics?.url}</p>
+        </Exists>
         <Exists exists={resume.basics?.phone}>
           <span>
             <i className="fas fa-phone"></i>{" "}

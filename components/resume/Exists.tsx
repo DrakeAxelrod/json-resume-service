@@ -4,5 +4,5 @@ type ExistsProps = {
 };
 
 export const Exists: FC<ExistsProps> = ({ exists, children }) => {
-  return exists ? <>{children}</> : null;
+  return exists && exists.length !== 0 ? <>{children}</> : null;
 };

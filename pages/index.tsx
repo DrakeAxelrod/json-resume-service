@@ -10,7 +10,8 @@ const Home: FC = () => {
   useEffect(() => {
     // Run! Like go get some data from an API.
     const getResume = async () => {
-      const { data } = await axios.get("http://localhost:3000/api/sample");
+      const { data } = await axios.get("http://localhost:3000/api/github/gists/DrakeAxelrod")
+      // const { data } = await axios.get("http://localhost:3000/api/sample");
       setResume(data);
     };
     getResume();
