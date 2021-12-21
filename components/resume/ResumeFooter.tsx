@@ -45,7 +45,6 @@ const InterestsSection: FC<ResumeSectionProps> = ({ name, resume }) => {
 };
 
 const ReferencesSection: FC<ResumeSectionProps> = ({ name, resume }) => {
-  console.log(resume.references)
   return (
     <section className="references">
       <SectionTitle input={name} />

@@ -1,34 +1,21 @@
-import { GetStaticProps } from "next";
-//import render from '@lib/json2handlebars';
-import { Resume } from "@components/resume/index"
-import { FC, useEffect, useState } from 'react';
-import axios from 'axios';
-import { defaultOrder } from "@lib/constants";
+import styles from "@styles/home.module.scss";
+import { origin } from "@utils/host-info"
 
 const Home: FC = () => {
-  const [resume, setResume] = useState({} as Resume);
-  useEffect(() => {
-    // Run! Like go get some data from an API.
-    const getResume = async () => {
-      // const { data } = await axios.get("http://localhost:3000/api/github/gists/DrakeAxelrod")
-      //const { data } = await axios.get("http://localhost:3000/api/sample");
-      const { data } = await axios.get("https://json-resume.vercel.app/api/sample");
-      setResume(data);
-    };
-    getResume();
-  }, []); // [] (no params)  will ensure the useEffect only runs once.
   return (
-    <>
-      <Resume resume={resume} />
-    </>
+    <div className={styles.container}>
+      <div className={styles.message}>
+        <p>
+          You must have a gist named resume.json to be able to render a resume{" "}
+        </p>
+        <p>
+          if you go to {`${origin}/{username}`} your resume will be rendered
+        </p>
+      </div>
+    </div>
   );
-};;
-
-export const getStaticProps: GetStaticProps = async () => {
-  return {
-    props: {},
-  };
 };
+
 
 // const Home: FC<any> = (props: any) => {
 //   return (

@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
   "basics": {
-    "name": "Richard Hendriks",
+    "name": "Sample Resume",
     "label": "Programmer",
     "image": "",
     "email": "richard.hendriks@mail.com",
