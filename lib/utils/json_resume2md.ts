@@ -196,7 +196,6 @@ const getReferences = (title: any, references: Reference[]): Reference[] => {
 };
 
 export const json_resume2md = (json: any, order = defaultOrder): string => {
-  //console.log(json);
   const meta = getMeta(json);
   const heading = getHeading(json);
   const template: any[] = [...meta, ...heading];

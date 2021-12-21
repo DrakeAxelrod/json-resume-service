@@ -4,5 +4,7 @@ type ExistsProps = {
 };
 
 export const Exists: FC<ExistsProps> = ({ exists, children }) => {
-  return exists && exists.length !== 0 ? <>{children}</> : null;
+  if (exists == null) return <></>;
+  const notEmpty = Array.isArray(exists) ? exists.length !== 0 : true;
+  return notEmpty ? <>{children}</> : <></>;
 };

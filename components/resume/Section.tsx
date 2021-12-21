@@ -197,26 +197,28 @@ const VolunteerSection: FC<ResumeSectionProps> = ({ name, resume }) => {
   );
 };
 
-export const section = (name: string, resume: Resume, i: number) => {
-  // if the resume doesn't have the section just return.
-  if (resume[name].length === 0) return;
-
+type GenericSectionProps = {
+  name: string;
+  resume: Resume;
+};
+export const Section: FC<GenericSectionProps> = ({ name, resume }) => {
+  if (resume[name].length === 0) return <></>;
   switch (name) {
     case "skills":
-      return <SkillsSection name={name} resume={resume} key={i} />;
+      return <SkillsSection name={name} resume={resume} />;
     case "education":
-      return <EducationSection name={name} resume={resume} key={i} />;
+      return <EducationSection name={name} resume={resume} />;
     case "work":
-      return <WorkSection name={name + " experience"} resume={resume} key={i} />;
+      return <WorkSection name={name + " experience"} resume={resume} />;
     case "projects":
-      return <ProjectsSection name={name} resume={resume} key={i} />;
+      return <ProjectsSection name={name} resume={resume} />;
     case "awards":
-      return <AwardsSection name={name} resume={resume} key={i} />;
+      return <AwardsSection name={name} resume={resume} />;
     case "publications":
-      return <PublicationsSection name={name} resume={resume} key={i} />;
+      return <PublicationsSection name={name} resume={resume} />;
     case "volunteer":
-      return <VolunteerSection name={name} resume={resume} key={i} />;
+      return <VolunteerSection name={name} resume={resume} />;
     default:
-      return;
+      return <></>;
   }
-};
+}

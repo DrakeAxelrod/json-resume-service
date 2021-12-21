@@ -46,3 +46,8 @@ export const setHttps = (link: string | undefined): string => {
   }
   return link || "#";
 }
+
+export const minimizeUrl = (url?: string) => {
+  const noProtocol =  url?.replace(/(^\w+:|^)\/\//, "");
+  return noProtocol?.replace("www.", "")
+}
