@@ -34,13 +34,19 @@ const SkillsSection: FC<ResumeSectionProps> = ({ name, resume }) => {
       <SectionTitle input={name} />
       {resume.skills?.map((skill: Skill, i: number) => {
         return (
-          <div key={i}>
-            <Heading level={1}>{skill.name}</Heading>
+          <span key={i}>
+            <span>
+              {i == 0 ? "| " : " | "}
+              {skill.name}
+              {" - "}
+            </span>
             {/* <p className="familiarity">{skill.level}</p> */}
-            <p className={styles.keywords}>
+            <span className={styles.keywords}>
+              {/* {" - "} */}
               {skill.keywords?.join(", ").toLowerCase()}
-            </p>
-          </div>
+            </span>
+            {/* {" | "} */}
+          </span>
         );
       })}
     </section>
@@ -57,7 +63,7 @@ const EducationSection: FC<ResumeSectionProps> = ({ name, resume }) => {
           <div key={i}>
             <Heading level={1}>
               {edu.institution}{" "}
-              <span className="area">
+              <span className={styles.area}>
                 {edu.area ? `- ${edu.area}` : ""}
                 {edu.studyType ? `, ${edu.studyType}` : ""}
               </span>
