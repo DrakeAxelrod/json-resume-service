@@ -51,7 +51,7 @@ const ReferencesSection: FC<ResumeSectionProps> = ({ name, resume }) => {
       {resume.references?.map((ref, i: number) => {
         return (
           <div key={i}>
-            <h3>{ref.name}</h3>
+            <h4>{ref.name}</h4>
             <p>{ref.reference}</p>
           </div>
         );

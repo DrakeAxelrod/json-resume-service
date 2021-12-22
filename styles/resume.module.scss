@@ -36,10 +36,10 @@ $A4_width: 210mm;
 $headerFont: Roboto;
 $bodyFont: Source Sans Pro;
 // sizes
-$default: 0.87em;
+$default: 0.9em;
 $xl: 1.5em;
-$lg: 1.05em;
-$md: 0.95em;
+$lg: 1em;
+$md: 0.9em;
 $sm: 0.87em;
 $xs: 0.8em;
 
@@ -71,6 +71,7 @@ $title: $text; // might not need rest
     html, body {
         @include print_dimensions;    
     }
+    padding: 0;
     background: transparent;
   }
 }
@@ -80,29 +81,31 @@ $title: $text; // might not need rest
   margin: 0 auto;
   // box-sizing: border-box;
   padding: 12.7mm 25.4mm;
-  line-height: 1.5;
+  // line-height: 1.5;
   background: white;
   box-shadow: $shadow;
   -webkit-box-shadow: $shadow;
-  
+  // h2 {
+  //   line-height: 1.5;
+  // }
   @media print {
     // this needs to be hyper fined tuned for correct printing
     @page {
       size: A4;
-      margin: 0;
+      margin: none;
     }
     html, body {
         @include print_dimensions;      
     }
+    font-size: 12pt;
+    line-height: 1.2;
+    // padding: 0 25.4mm;
     box-shadow: none;
-    padding-top: 0;
-    padding-bottom: 0;
     -webkit-box-shadow: none;
   }
 }
 
 .resume {
-  // padding: 25.4mm; //7.62mm;
   margin: 0;
   padding: 0;
   font-family: $bodyFont;
@@ -114,6 +117,9 @@ $title: $text; // might not need rest
   }
   ul {
   padding-left: 2em;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: $text;
   }
 }
 
@@ -168,6 +174,10 @@ $title: $text; // might not need rest
   color: $title;
   overflow: hidden;
   text-align: left;
+    @media print {
+    // this needs to be hyper fined tuned for correct printing
+    line-height: 1.5;
+  }
 }
 .section-title:after {
   background-color: $title;
@@ -197,6 +207,7 @@ $title: $text; // might not need rest
     font-weight: normal;
     color: $gray-text;
     font-size: $xs;
+    
   }
 }
 
@@ -213,13 +224,13 @@ $title: $text; // might not need rest
   }
 }
 
-.section-summary {
-  padding-bottom: 0.4em;
-  padding-top: 0.1em;
-}
+// .section-summary {
+//   // padding-bottom: 0.4em;
+//   // padding-top: 0.1em;
+// }
 
 .left-meta {
-  // line-height: 1.5;
+  // line-height: 1;
   position: relative;
   font-style: italic;
   vertical-align: center;
@@ -229,13 +240,14 @@ $title: $text; // might not need rest
 }
 
 .list {
-  padding: 0.25em 1em;
+  padding: 0.25em 0.75em;
   font-size: $sm;
   list-style-type: square;
+  // line-height: 1.2;
 }
 
 .keywords {
-  font-size: $sm;
+  font-size: $md;
   color: $gray-text;
 }
 
@@ -248,8 +260,8 @@ $title: $text; // might not need rest
   vertical-align: middle;
   padding: 0.5em;
   margin: auto;
-  font-size: 0.6em;
-  width: 2.25em;
+  font-size: 0.75em;
+  width: 2em;
   min-width: 2em;
   min-height: 2em;
   text-align: center;
@@ -263,4 +275,8 @@ $title: $text; // might not need rest
 
 .hide {
   display: none;
+}
+
+.area {
+  letter-spacing: 0.0001em;
 }
