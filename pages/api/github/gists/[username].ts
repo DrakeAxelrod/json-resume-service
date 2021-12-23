@@ -1,19 +1,31 @@
-import { get_gist_resume_json, github_client } from "@lib/api/github";
+// pages/api/index.ts
+
+import { NextApiRequest, NextApiResponse } from "next";
 import { Req, Res } from "types";
+// import fs from "fs";
+import { getPDF } from "@api/puppeteer";
+
+const isDev = process.env.NODE_ENV === "development";
 
 const handler = async (req: Req, res: Res) => {
-  const username = req.query.username as string;
-  const { data } = await github_client.get(`/users/${username}/gists`);
-  const json_resume = await get_gist_resume_json(username, data);
-  let message;
-  if (json_resume === null) {
-    res.statusCode = 404;
-    message = `could not find a resume.json in the users gists`;
-  } else {
+  const username = req.query.username
+  console.log(username)
+  const protocol = isDev ? "http://" : "https://";
+  const uri = protocol + req.headers.host + `/${username}`;
+  console.log(uri);
+  try {
+    const file = await getPDF(uri, isDev);
     res.statusCode = 200;
-    message = JSON.stringify(json_resume, null, 2);
+    res.setHeader("Content-Type", "application/pdf");
+    // res.setHeader("Content-Disposition", "attachment; filename=dummy.pdf");
+    res.setHeader("Content-Length", file.length);
+    res.end(file);
+  } catch (e) {
+    res.statusCode = 500;
+    res.setHeader("Content-Type", "text/html");
+    res.end("<h1>Internal Error</h1><p>Sorry, there was a problem</p>");
+    console.error(e);
   }
-  res.json(message);
-};
+}
 
 export default handler;
