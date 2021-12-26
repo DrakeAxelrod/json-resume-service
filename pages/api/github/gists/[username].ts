@@ -9,10 +9,9 @@ const isDev = process.env.NODE_ENV === "development";
 
 const handler = async (req: Req, res: Res) => {
   const username = req.query.username
-  console.log(username)
   const protocol = isDev ? "http://" : "https://";
   const uri = protocol + req.headers.host + `/${username}`;
-  console.log(uri);
+  // console.log(uri);
   try {
     const file = await getPDF(uri, isDev);
     res.statusCode = 200;

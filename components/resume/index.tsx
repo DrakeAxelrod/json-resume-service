@@ -1,16 +1,17 @@
-import styles from "@styles/resume.module.scss";
+// import styles from "@styles/resume.module.scss";
 import { defaultOrder } from "@lib/constants";
 import { ResumeHeader } from "./ResumeHeader";
 import { Section } from "./Section";
 import { ResumeFooter } from "./ResumeFooter";
 import { Exists } from "./Exists";
+import styles from "@styles/resume.module.scss"
 
 type Props = {
   resume: Resume;
   order?: string[];
 };
 
-export const Resume: FC<Props> = ({ resume, order = defaultOrder }) => {
+const Resume: FC<Props> = ({ resume, order = defaultOrder }) => {
   const keys = Object.keys(resume);
   const result = order.filter((e) => keys.includes(e));
   return (
@@ -30,3 +31,5 @@ export const Resume: FC<Props> = ({ resume, order = defaultOrder }) => {
     </section>
   );
 };
+
+export default Resume;

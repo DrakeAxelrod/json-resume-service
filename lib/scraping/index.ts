@@ -83,7 +83,7 @@ export const get_job_posting_info = ($: CheerioAPI, baseURL: string) => {
 
   info["keywords"] = get_page_keywords($)
   const urls = get_all_external_urls($, baseURL);
-  console.log(urls)
+  // console.log(urls)
   return info;
 };
 

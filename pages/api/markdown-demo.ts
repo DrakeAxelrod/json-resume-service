@@ -8,7 +8,7 @@ const handler = async (req: Req, res: Res) => {
     "http://localhost:3000/api/github/gists/DrakeAxelrod"
   );
   const markdown_resume = json_resume2md(data)
-  console.log(markdown_resume)
+  // console.log(markdown_resume)
   res.status(200).json({})
 };
 

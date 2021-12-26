@@ -21,7 +21,7 @@ export async function getOptions(isDev: boolean) {
   let options: Options;
   if (isDev) {
     options = {
-      args: [],
+      args: chrome.args, //[],
       executablePath: exePath,
       headless: true,
     };

@@ -9,7 +9,7 @@ const isDev = process.env.NODE_ENV === "development";
 export default async function (_: NextApiRequest, res: NextApiResponse) {
   const protocol = isDev ? "http://" : "https://" 
   const uri = protocol + _.headers.host + `/${_.query.username}`
-  console.log(uri)
+//   console.log(uri)
     try {
         const file = await getPDF(uri, isDev);
         res.statusCode = 200;

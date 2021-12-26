@@ -132,7 +132,6 @@ const getEducation = (title: any, educations: Education[]): Education[] => {
       return education.institution
   };
   educations.forEach((education) => {
-    console.log(education);
     data.push({
       h3: edu(education),
     });

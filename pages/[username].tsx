@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { Resume } from "@components/resume";
+import Resume from "@components/resume";
 import { load_sample_resume } from "@utils/sample-resume-loader";
 import type { GetStaticPaths, GetStaticProps } from "next";
 import { api } from "@lib/api/local";
 import useSWR from "swr";
 import styles from "@styles/spinner.module.scss"
 
+
 const fetcher = async (url: string) => await api.get(url).then(res => res.data);
 
 function GetResume(username: string | string[] | undefined, placeholder: Resume) {
   const { data, error } = useSWR(`/api/github/gists/json/${username}`, fetcher);
-  console.log(data);
+  // console.log(data);
   if (error) return <Resume resume={placeholder} />;
   if (!data) return (
     <div className={styles.background}>

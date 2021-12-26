@@ -2,7 +2,7 @@ import core from 'puppeteer-core';
 import { getOptions } from './options';
 let _page: core.Page | null;
 
-async function getPage(isDev: boolean) {
+export async function getPage(isDev: boolean) {
     if (_page) {
         return _page;
     }
