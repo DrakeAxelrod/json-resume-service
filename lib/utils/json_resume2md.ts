@@ -101,7 +101,7 @@ const section = (title: string, json: Resume) => {
 // "link";
 // data: String | Object | Array<String>;
 
-const getSkills = (title: any, skills: Skill[]): Skill[] => {
+const getSkills = (title: any, skills: any[]) => {
   const data: any[] = [];
   skills.forEach((skill) => {
     data.push({ h3: `${skill.name} - ${skill.level}` });
@@ -121,7 +121,7 @@ const getSkills = (title: any, skills: Skill[]): Skill[] => {
 //   "courses": [
 //     "DB1101 - Basic SQL"
 //   ]
-const getEducation = (title: any, educations: Education[]): Education[] => {
+const getEducation = (title: any, educations: any[]): any[] => {
   const data: any[] = [];
   const edu = (education: any) => {
     if (education.url)
@@ -147,7 +147,7 @@ const getEducation = (title: any, educations: Education[]): Education[] => {
 
 // stuff below still need to be populated
 
-const getWork = (title: any, workExperiences: WorkExperience[]): WorkExperience[] => {
+const getWork = (title: any, workExperiences: any[]): any[] => {
   const data: any[] = [];
   workExperiences.forEach((experience) => {
     data.push({ h3: `${experience.name} - ${experience.position}`})
@@ -155,40 +155,40 @@ const getWork = (title: any, workExperiences: WorkExperience[]): WorkExperience[
   data.length > 0 ? data.unshift(title) : null;
   return data;
 };
-const getProjects = (title: any, projects: Project[]): Project[] => {
+const getProjects = (title: any, projects: any[]): any[] => {
   const data: any[] = [];
   data.length > 0 ? data.unshift(title) : null;
   return data;
 };
-const getVolunteer = (title: any, volunteer: Volunteer[]): Volunteer[] => {
+const getVolunteer = (title: any, volunteer: any[]): any[] => {
   const data: any[] = [];
   data.length > 0 ? data.unshift(title) : null;
   return data;
 };
-const getAwards = (title: any, awards: Award[]): Award[] => {
+const getAwards = (title: any, awards: any[]): any[] => {
   const data: any[] = [];
   data.length > 0 ? data.unshift(title) : null;
   return data;
 };
 const getPublications = (
   title: any,
-  publications: Publication[]
-): Publication[] => {
+  publications: any[]
+): any[] => {
   const data: any[] = [];
   data.length > 0 ? data.unshift(title) : null;
   return data;
 };
-const getLanguages = (title: any, languages: Language[]): Language[] => {
+const getLanguages = (title: any, languages: any[]): any[] => {
   const data: any[] = [];
   data.length > 0 ? data.unshift(title) : null;
   return data;
 };
-const getInterests = (title: any, interests: Interest[]): Interest[] => {
+const getInterests = (title: any, interests: any[]): any[] => {
   const data: any[] = [];
   data.length > 0 ? data.unshift(title) : null;
   return data;
 };
-const getReferences = (title: any, references: Reference[]): Reference[] => {
+const getReferences = (title: any, references: any[]): any[] => {
   const data: any[] = [];
   data.length > 0 ? data.unshift(title) : null;
   return data;
