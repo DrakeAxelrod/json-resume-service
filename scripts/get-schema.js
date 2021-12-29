@@ -4,7 +4,7 @@ const axios = require("axios");
 const fs = require("fs");
 const path = require("path");
 
-const resume_schema_path = path.join(process.cwd(), "schemas", "schema.json");
+const resume_schema_path = path.join(process.cwd(), "schemas", "resume.schema.json");
 const resume_type_path = path.join(process.cwd(), "types", "json-resume.d.ts");
 
 const get_json_resume_schema_and_generate_schema_and_type_files = async () => {

@@ -2,7 +2,7 @@ import { capitalize, formatDate, generateDateRange, setHttps } from "@utils/stri
 import { SectionTitle } from "./SectionTitle";
 import styles from "@styles/resume.module.scss";
 import { Link } from "./Link";
-import { Exists } from "./Exists";
+import { Exists } from "../Exists";
 
 // helpers
 type HeadingProps = {

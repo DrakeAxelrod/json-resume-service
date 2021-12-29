@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Resume from "@components/resume";
-import { load_sample_resume } from "@utils/sample-resume-loader";
+import { load_sample_resume } from "@utils/sample-loader";
 import type { GetStaticPaths, GetStaticProps } from "next";
 import { api } from "@lib/api/local";
 import useSWR from "swr";

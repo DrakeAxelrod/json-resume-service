@@ -3,7 +3,7 @@ import { defaultOrder } from "@lib/constants";
 import { ResumeHeader } from "./ResumeHeader";
 import { Section } from "./Section";
 import { ResumeFooter } from "./ResumeFooter";
-import { Exists } from "./Exists";
+import { Exists } from "../Exists";
 import styles from "@styles/resume.module.scss"
 
 type Props = {

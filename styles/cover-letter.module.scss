@@ -1,0 +1,154 @@
+// colors (not all used)
+$ivory: #fffff0;
+$ghostwhite: #f8f8ff;
+$whitesmoke: #f5f5f5;
+
+// Gray-scale colors
+$darkgray: #333333;
+$gray: #5d5d5d;
+$lightgray: #999999;
+// Basic colors
+$green: #c2e15f;
+$orange: #fda333;
+$purple: #d3a4f9;
+$red: #fb4485;
+$blue: #6ce0f1;
+// Awesome colors
+$awesome-emerald: #00a388;
+$awesome-skyblue: #0395de;
+$awesome-red: #dc3522;
+$awesome-pink: #ef4089;
+$awesome-orange: #ff6138;
+$awesome-nephritis: #27ae60;
+$awesome-concrete: #95a5a6;
+$awesome-dark-night: #131a28;
+$awesome: $awesome-red;
+
+// shadow :P
+$shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+// a4 properties
+$A4_actual_height: 297mm;
+$A4_height: 100%;
+$A4_width: 210mm;
+
+// fonts
+// add fallbacks
+$headerFont: Roboto;
+$bodyFont: Source Sans Pro;
+// sizes
+$default: 0.9em;
+$xl: 1.5em;
+$lg: 1em;
+$md: 0.9em;
+$sm: 0.87em;
+$xs: 0.8em;
+
+// font-colors
+$dark-text: #414141;
+$text: $darkgray;
+$gray-text: $gray;
+$light-text: $lightgray;
+$title: $text; // might not need rest
+
+@mixin a4_dimensions {
+  width: 210mm;
+  height: 100%;
+}
+@mixin print_dimensions {
+  width: 210mm;
+  height: 297mm;
+}
+
+.coverletter-page {
+  padding: 5em 0;
+  background: $whitesmoke;
+  min-height: 100vh;
+  @media print {
+    @page {
+      size: A4;
+      margin: 0;
+    }
+    html,
+    body {
+      @include print_dimensions;
+    }
+    padding: 0;
+    background: transparent;
+  }
+}
+
+.A4 {
+  @include a4_dimensions;
+  margin: 0 auto;
+  // box-sizing: border-box;
+  padding: 12.7mm 25.4mm;
+  // line-height: 1.5;
+  background: white;
+  box-shadow: $shadow;
+  -webkit-box-shadow: $shadow;
+  animation: fadeIn 2.0s ease forwards;
+  // h2 {
+  //   line-height: 1.5;
+  // }
+  @media print {
+    // this needs to be hyper fined tuned for correct printing
+    @page {
+      size: A4;
+      margin: none;
+    }
+    html,
+    body {
+      @include print_dimensions;
+    }
+    font-size: 12pt;
+    line-height: 1.2;
+    // padding: 0 25.4mm;
+    animation: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @-moz-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @-o-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @-ms-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}

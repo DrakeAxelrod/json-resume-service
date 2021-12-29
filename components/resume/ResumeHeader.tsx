@@ -2,7 +2,7 @@ import { formatPhoneNumber, minimizeUrl, setHttps } from "@utils/string-parsers"
 import { CountryCode } from "libphonenumber-js";
 import { SectionTitle } from "./SectionTitle";
 import styles from "@styles/resume.module.scss";
-import { Exists } from "./Exists";
+import { Exists } from "../Exists";
 import { Link } from "./Link";
 
 type ResumeHeaderProps = {
