@@ -32,7 +32,7 @@ const SkillsSection: FC<ResumeSectionProps> = ({ name, resume }) => {
   return (
     <section className="skills">
       <SectionTitle input={name} />
-      {resume.skills?.map((skill: Skill, i: number) => {
+      {resume.skills?.map((skill, i: number) => {
         return (
           <span key={i}>
             <span>
@@ -57,7 +57,7 @@ const EducationSection: FC<ResumeSectionProps> = ({ name, resume }) => {
   return (
     <section className="education">
       <SectionTitle input={name} />
-      {resume.education?.map((edu: Education, i: number) => {
+      {resume.education?.map((edu, i: number) => {
         const dateRange = generateDateRange(edu);
         return (
           <div key={i}>
@@ -81,7 +81,7 @@ const WorkSection: FC<ResumeSectionProps> = ({ name, resume }) => {
   return (
     <section className="work">
       <SectionTitle input={name} />
-      {resume.work?.map((work: WorkExperience, i: number) => {
+      {resume.work?.map((work, i: number) => {
         return (
           <div key={i}>
             <Heading level={1}>
@@ -208,7 +208,13 @@ type GenericSectionProps = {
   resume: Resume;
 };
 export const Section: FC<GenericSectionProps> = ({ name, resume }) => {
-  if (resume[name].length === 0) return <></>;
+  let notViable = false
+  Object(resume).entries().forEach((entrypair: string) => {
+    if (entrypair[0] === name) {
+      notViable = entrypair[1].length === 0
+    }
+  })
+  if (notViable) return <></>;
   switch (name) {
     case "skills":
       return <SkillsSection name={name} resume={resume} />;
