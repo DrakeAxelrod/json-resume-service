@@ -7,6 +7,7 @@ import styles from "@styles/resume.module.scss";
 import { getPage } from "@lib/api/puppeteer";
 import { getIntersectionOfTwoWordArrays } from "@lib/language";
 import { getJobKeyWordsOverlap, getResumeSkillsKeywords } from "@lib/resume-helpers";
+import { compile } from "json-schema-to-typescript";
 
 
 const handler = async (req: Req, res: Res) => {

@@ -2,6 +2,7 @@
   "name": "resume-service",
   "private": true,
   "scripts": {
+    "predev": "node scripts/get-schema.js",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -36,6 +37,7 @@
     "eslint": "8.4.1",
     "eslint-config-next": "12.0.7",
     "jest": "^27.4.5",
+    "json-schema-to-typescript": "^10.1.5",
     "typescript": "4.5.3"
   }
 }

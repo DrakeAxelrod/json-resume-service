@@ -11,8 +11,11 @@ declare type Children =
   | ReactPortal
   | null
   | undefined;
-  
+
 declare type ResumeSectionProps = {
   resume: Resume;
   name: string;
 };
+
+type Resume = import("./json-resume").ResumeSchema
+type Iso8601 = import("./json-resume").Iso8601
