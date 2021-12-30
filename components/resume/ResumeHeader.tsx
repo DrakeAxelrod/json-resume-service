@@ -39,6 +39,7 @@ export const ResumeHeader: FC<ResumeHeaderProps> = ({ resume }) => {
       <p className={styles.contact}>
         <Exists exists={resume.basics?.url}>
           <a
+            id="icon"
             className={`${styles.icon} fas fa-link`}
             href={setHttps(resume.basics?.url)}
             target="_blank"
@@ -48,7 +49,7 @@ export const ResumeHeader: FC<ResumeHeaderProps> = ({ resume }) => {
         </Exists>
         <Exists exists={resume.basics?.phone}>
           <span>
-            <i className={`${styles.icon} fas fa-phone`}></i>{" "}
+            <i id="icon" className={`${styles.icon} fas fa-phone`}></i>{" "}
             {formatPhoneNumber(
               resume.basics?.phone,
               resume.basics?.location?.countryCode as CountryCode
@@ -58,6 +59,7 @@ export const ResumeHeader: FC<ResumeHeaderProps> = ({ resume }) => {
         <Exists exists={resume.basics?.email}>
           <span>
             <a
+              id="icon"
               className={`${styles.icon} fas fa-envelope`}
               href={`mailto: ${resume.basics?.email}`}
               target="_blank"
@@ -70,6 +72,7 @@ export const ResumeHeader: FC<ResumeHeaderProps> = ({ resume }) => {
           return (
             <span key={i}>
               <a
+                id="icon"
                 target="_blank"
                 rel="noreferrer"
                 className={`${

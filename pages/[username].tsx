@@ -12,25 +12,28 @@ const fetcher = async (url: string) => await api.get(url).then(res => res.data);
 
 function GetResume(username: string | string[] | undefined, placeholder: Resume) {
   const { data, error } = useSWR(`/api/github/gists/json/${username}`, fetcher);
+  const resume = data ? data : placeholder
   // console.log(data);
   if (error) return (
     <div className="loaded">
-      <Resume resume={placeholder} />
+      <Resume resume={resume} />
     </div>
   );
   if (!data) return (
-    <div className={styles.background}>
-      <div className={styles.loading}>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+    <div className="loading">
+      <div className={styles.background}>
+        <div className={styles.loading}>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </div>
     </div>
   );
   return (
     <div className="loaded">
-      <Resume resume={data} />
+      <Resume resume={resume} />
     </div>
   );
 }

@@ -14,8 +14,10 @@ export async function getPage(isDev: boolean) {
 
 export async function getPDF(uri: string, isDev: boolean) {
     const page = await getPage(isDev);
-    await page.goto(uri)
-    await page.waitForSelector(".loaded", { timeout: 4900 })
+    await page.goto(uri, {waitUntil: "networkidle2"})
+    await page.waitForTimeout(4000)
+    await page.waitForSelector("#resume")
+    await page.waitForSelector("#icon");
     const file = await page.pdf({ format: 'a4' })
     return file;
 }

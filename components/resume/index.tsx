@@ -18,7 +18,7 @@ const Resume: FC<Props> = ({ resume, order = defaultOrder }) => {
     <section className={styles["resume-page"]}>
       <Exists exists={keys}>
         <div className={styles.A4}>
-          <article className={styles.resume}>
+          <article className={styles.resume} id="resume">
             <ResumeHeader resume={resume} />
             {result.map((name, i) => {
               return <Section key={i} resume={resume} name={name} />;

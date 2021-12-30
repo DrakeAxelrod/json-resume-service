@@ -86,7 +86,7 @@ $title: $text; // might not need rest
   background: white;
   box-shadow: $shadow;
   -webkit-box-shadow: $shadow;
-  animation: fadeIn 2.0s ease forwards;
+  // animation: fadeIn 1s ease forwards;
   // h2 {
   //   line-height: 1.5;
   // }
@@ -106,6 +106,26 @@ $title: $text; // might not need rest
     animation: none;
     box-shadow: none;
     -webkit-box-shadow: none;
+    opacity: 1;
+  }
+
+  @-o-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @-ms-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
   }
   @keyframes fadeIn {
     0% {
@@ -320,6 +340,17 @@ $title: $text; // might not need rest
   text-decoration: none;
   background: black;
   color: white;
+  @media print {
+    // this needs to be hyper fined tuned for correct printing
+    // padding: 0 25.4mm;
+    font-size: 0.75em;
+    color: black;
+    animation: none;
+    box-shadow: none;
+    width: 2em;
+    height: 2em;
+    -webkit-box-shadow: none;
+  }
 }
 .icon:hover {
   opacity: 0.7;
