@@ -13,7 +13,11 @@ const fetcher = async (url: string) => await api.get(url).then(res => res.data);
 function GetResume(username: string | string[] | undefined, placeholder: Resume) {
   const { data, error } = useSWR(`/api/github/gists/json/${username}`, fetcher);
   // console.log(data);
-  if (error) return <Resume resume={placeholder} />;
+  if (error) return (
+    <div className="loaded">
+      <Resume resume={placeholder} />
+    </div>
+  );
   if (!data) return (
     <div className={styles.background}>
       <div className={styles.loading}>
@@ -24,7 +28,11 @@ function GetResume(username: string | string[] | undefined, placeholder: Resume)
       </div>
     </div>
   );
-  return <Resume resume={data} />;
+  return (
+    <div className="loaded">
+      <Resume resume={data} />
+    </div>
+  );
 }
 
 const ResumePreview: FC<any> = (props) => {

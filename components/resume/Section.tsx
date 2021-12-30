@@ -203,18 +203,17 @@ const VolunteerSection: FC<ResumeSectionProps> = ({ name, resume }) => {
   );
 };
 
+interface ResumeFix extends Resume {
+  [key: string]: any;
+}
 type GenericSectionProps = {
   name: string;
-  resume: Resume;
+  resume: ResumeFix; 
 };
 export const Section: FC<GenericSectionProps> = ({ name, resume }) => {
-  let notViable = false
-  Object(resume).entries().forEach((entrypair: string) => {
-    if (entrypair[0] === name) {
-      notViable = entrypair[1].length === 0
-    }
-  })
-  if (notViable) return <></>;
+
+  if (resume[name].length === 0) return <></>
+  // if (notViable) return <></>;
   switch (name) {
     case "skills":
       return <SkillsSection name={name} resume={resume} />;
