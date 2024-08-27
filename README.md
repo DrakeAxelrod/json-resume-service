@@ -31,7 +31,7 @@
 
 ---
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https//github.com/metaory/json-resume-service)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https//github.com/metaory/jsonresume-service)
 
 <p align="center">
 <img src="public/resume-service-image.png" alt="resume service example" />
@@ -183,7 +183,7 @@ This means that you can create professional looking resumes within seconds after
 
 You'll want to fork this repository and deploy your own resume generator service.
 
-1. Click the fork button at the top right of GitHub or just click this link [Fork](https://github.com/metaory/json-resume-service/fork)
+1. Click the fork button at the top right of GitHub or just click this link [Fork](https://github.com/metaory/jsonresume-service/fork)
 2. Clone your forked repository
 
 ```bash
@@ -193,7 +193,7 @@ git clone URL_OF_FORKED_REPO_HERE
 3. Change directory to your local copy of the forked repository
 
 ```bash
-cd resume-service
+cd jsonresume-service
 ```
 
 6. Run locally with the project locally
