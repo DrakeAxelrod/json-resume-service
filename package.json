@@ -1,7 +1,6 @@
 {
   "name": "jsonresume-service",
   "private": false,
-  "type": "module",
   "version": "2.0.0",
   "scripts": {
     "dev": "next dev",
