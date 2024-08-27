@@ -1,10 +1,11 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "additionalProperties": false,
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/example.json",
+  "additionalProperties": true,
   "definitions": {
     "iso8601": {
       "type": "string",
-      "description": "e.g. 2014-06-29",
+      "description": "Similar to the standard date type, but each section after the year is optional. e.g. 2014-06-29 or 2023-04",
       "pattern": "^([1-2][0-9]{3}-[0-1][0-9]-[0-3][0-9]|[1-2][0-9]{3}-[0-1][0-9]|[1-2][0-9]{3})$"
     }
   },
@@ -69,8 +70,7 @@
               "type": "string",
               "description": "The general region where you live. Can be a US state, or a province, for instance."
             }
-          },
-          "required": []
+          }
         },
         "profiles": {
           "type": "array",
@@ -93,13 +93,10 @@
                 "description": "e.g. http://twitter.example.com/neutralthoughts",
                 "format": "uri"
               }
-            },
-            "required": []
-          },
-          "minItems": 0
+            }
+          }
         }
-      },
-      "required": []
+      }
     },
     "work": {
       "type": "array",
@@ -130,14 +127,10 @@
             "format": "uri"
           },
           "startDate": {
-            "type": "string",
-            "description": "e.g. 2014-06-29",
-            "pattern": "^([1-2][0-9]{3}-[0-1][0-9]-[0-3][0-9]|[1-2][0-9]{3}-[0-1][0-9]|[1-2][0-9]{3})$"
+            "$ref": "#/definitions/iso8601"
           },
           "endDate": {
-            "type": "string",
-            "description": "e.g. 2014-06-29",
-            "pattern": "^([1-2][0-9]{3}-[0-1][0-9]-[0-3][0-9]|[1-2][0-9]{3}-[0-1][0-9]|[1-2][0-9]{3})$"
+            "$ref": "#/definitions/iso8601"
           },
           "summary": {
             "type": "string",
@@ -150,13 +143,10 @@
             "items": {
               "type": "string",
               "description": "e.g. Increased profits by 20% from 2011-2012 through viral advertising"
-            },
-            "minItems": 0
+            }
           }
-        },
-        "required": []
-      },
-      "minItems": 0
+        }
+      }
     },
     "volunteer": {
       "type": "array",
@@ -179,14 +169,10 @@
             "format": "uri"
           },
           "startDate": {
-            "type": "string",
-            "description": "e.g. 2014-06-29",
-            "pattern": "^([1-2][0-9]{3}-[0-1][0-9]-[0-3][0-9]|[1-2][0-9]{3}-[0-1][0-9]|[1-2][0-9]{3})$"
+            "$ref": "#/definitions/iso8601"
           },
           "endDate": {
-            "type": "string",
-            "description": "e.g. 2014-06-29",
-            "pattern": "^([1-2][0-9]{3}-[0-1][0-9]-[0-3][0-9]|[1-2][0-9]{3}-[0-1][0-9]|[1-2][0-9]{3})$"
+            "$ref": "#/definitions/iso8601"
           },
           "summary": {
             "type": "string",
@@ -199,13 +185,10 @@
             "items": {
               "type": "string",
               "description": "e.g. Increased profits by 20% from 2011-2012 through viral advertising"
-            },
-            "minItems": 0
+            }
           }
-        },
-        "required": []
-      },
-      "minItems": 0
+        }
+      }
     },
     "education": {
       "type": "array",
@@ -232,14 +215,10 @@
             "description": "e.g. Bachelor"
           },
           "startDate": {
-            "type": "string",
-            "description": "e.g. 2014-06-29",
-            "pattern": "^([1-2][0-9]{3}-[0-1][0-9]-[0-3][0-9]|[1-2][0-9]{3}-[0-1][0-9]|[1-2][0-9]{3})$"
+            "$ref": "#/definitions/iso8601"
           },
           "endDate": {
-            "type": "string",
-            "description": "e.g. 2014-06-29",
-            "pattern": "^([1-2][0-9]{3}-[0-1][0-9]-[0-3][0-9]|[1-2][0-9]{3}-[0-1][0-9]|[1-2][0-9]{3})$"
+            "$ref": "#/definitions/iso8601"
           },
           "score": {
             "type": "string",
@@ -252,13 +231,10 @@
             "items": {
               "type": "string",
               "description": "e.g. H1302 - Introduction to American history"
-            },
-            "minItems": 0
+            }
           }
-        },
-        "required": []
-      },
-      "minItems": 0
+        }
+      }
     },
     "awards": {
       "type": "array",
@@ -273,9 +249,7 @@
             "description": "e.g. One of the 100 greatest minds of the century"
           },
           "date": {
-            "type": "string",
-            "description": "e.g. 2014-06-29",
-            "pattern": "^([1-2][0-9]{3}-[0-1][0-9]-[0-3][0-9]|[1-2][0-9]{3}-[0-1][0-9]|[1-2][0-9]{3})$"
+            "$ref": "#/definitions/iso8601"
           },
           "awarder": {
             "type": "string",
@@ -285,10 +259,8 @@
             "type": "string",
             "description": "e.g. Received for my work with Quantum Physics"
           }
-        },
-        "required": []
-      },
-      "minItems": 0
+        }
+      }
     },
     "certificates": {
       "type": "array",
@@ -303,9 +275,7 @@
             "description": "e.g. Certified Kubernetes Administrator"
           },
           "date": {
-            "type": "string",
-            "description": "e.g. 1989-06-12",
-            "format": "date"
+            "$ref": "#/definitions/iso8601"
           },
           "url": {
             "type": "string",
@@ -316,10 +286,8 @@
             "type": "string",
             "description": "e.g. CNCF"
           }
-        },
-        "required": []
-      },
-      "minItems": 0
+        }
+      }
     },
     "publications": {
       "type": "array",
@@ -338,9 +306,7 @@
             "description": "e.g. IEEE, Computer Magazine"
           },
           "releaseDate": {
-            "type": "string",
-            "description": "e.g. 2014-06-29",
-            "pattern": "^([1-2][0-9]{3}-[0-1][0-9]-[0-3][0-9]|[1-2][0-9]{3}-[0-1][0-9]|[1-2][0-9]{3})$"
+            "$ref": "#/definitions/iso8601"
           },
           "url": {
             "type": "string",
@@ -351,10 +317,8 @@
             "type": "string",
             "description": "Short summary of publication. e.g. Discussion of the World Wide Web, HTTP, HTML."
           }
-        },
-        "required": []
-      },
-      "minItems": 0
+        }
+      }
     },
     "skills": {
       "type": "array",
@@ -379,13 +343,10 @@
             "items": {
               "type": "string",
               "description": "e.g. HTML"
-            },
-            "minItems": 0
+            }
           }
-        },
-        "required": []
-      },
-      "minItems": 0
+        }
+      }
     },
     "languages": {
       "type": "array",
@@ -403,10 +364,8 @@
             "type": "string",
             "description": "e.g. Fluent, Beginner"
           }
-        },
-        "required": []
-      },
-      "minItems": 0
+        }
+      }
     },
     "interests": {
       "type": "array",
@@ -425,13 +384,10 @@
             "items": {
               "type": "string",
               "description": "e.g. Friedrich Nietzsche"
-            },
-            "minItems": 0
+            }
           }
-        },
-        "required": []
-      },
-      "minItems": 0
+        }
+      }
     },
     "references": {
       "type": "array",
@@ -449,10 +405,8 @@
             "type": "string",
             "description": "e.g. Joe blogs was a great employee, who turned up to work at least once a week. He exceeded my expectations when it came to doing nothing."
           }
-        },
-        "required": []
-      },
-      "minItems": 0
+        }
+      }
     },
     "projects": {
       "type": "array",
@@ -477,8 +431,7 @@
             "items": {
               "type": "string",
               "description": "e.g. Directs you close but not quite there"
-            },
-            "minItems": 0
+            }
           },
           "keywords": {
             "type": "array",
@@ -487,18 +440,13 @@
             "items": {
               "type": "string",
               "description": "e.g. AngularJS"
-            },
-            "minItems": 0
+            }
           },
           "startDate": {
-            "type": "string",
-            "description": "e.g. 2014-06-29",
-            "pattern": "^([1-2][0-9]{3}-[0-1][0-9]-[0-3][0-9]|[1-2][0-9]{3}-[0-1][0-9]|[1-2][0-9]{3})$"
+            "$ref": "#/definitions/iso8601"
           },
           "endDate": {
-            "type": "string",
-            "description": "e.g. 2014-06-29",
-            "pattern": "^([1-2][0-9]{3}-[0-1][0-9]-[0-3][0-9]|[1-2][0-9]{3}-[0-1][0-9]|[1-2][0-9]{3})$"
+            "$ref": "#/definitions/iso8601"
           },
           "url": {
             "type": "string",
@@ -512,8 +460,7 @@
             "items": {
               "type": "string",
               "description": "e.g. Team Lead, Speaker, Writer"
-            },
-            "minItems": 0
+            }
           },
           "entity": {
             "type": "string",
@@ -523,10 +470,8 @@
             "type": "string",
             "description": " e.g. 'volunteering', 'presentation', 'talk', 'application', 'conference'"
           }
-        },
-        "required": []
-      },
-      "minItems": 0
+        }
+      }
     },
     "meta": {
       "type": "object",
@@ -546,12 +491,9 @@
           "type": "string",
           "description": "Using ISO 8601 with YYYY-MM-DDThh:mm:ss"
         }
-      },
-      "required": []
+      }
     }
   },
   "title": "Resume Schema",
-  "type": "object",
-  "required": [],
-  "id": "JSONResumeSchema"
+  "type": "object"
 }

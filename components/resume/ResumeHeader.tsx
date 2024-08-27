@@ -1,5 +1,5 @@
 import { formatPhoneNumber, minimizeUrl, setHttps } from "@utils/string-parsers";
-import { CountryCode } from "libphonenumber-js";
+// import { CountryCode } from "libphonenumber-js";
 import { SectionTitle } from "./SectionTitle";
 import styles from "@styles/resume.module.scss";
 import { Exists } from "../Exists";
@@ -50,10 +50,7 @@ export const ResumeHeader: FC<ResumeHeaderProps> = ({ resume }) => {
         <Exists exists={resume.basics?.phone}>
           <span>
             <i id="icon" className={`${styles.icon} fas fa-phone`}></i>{" "}
-            {formatPhoneNumber(
-              resume.basics?.phone,
-              resume.basics?.location?.countryCode as CountryCode
-            )}
+            {formatPhoneNumber(resume.basics?.phone)}
           </span>
         </Exists>
         <Exists exists={resume.basics?.email}>
@@ -75,9 +72,8 @@ export const ResumeHeader: FC<ResumeHeaderProps> = ({ resume }) => {
                 id="icon"
                 target="_blank"
                 rel="noreferrer"
-                className={`${
-                  styles.icon
-                } fa fa-${profile.network?.toLowerCase()}`}
+                className={`${styles.icon
+                  } fa fa-${profile.network?.toLowerCase()}`}
                 href={`${profile.url}`}
                 aria-label={`${profile.network}`}
               ></a>{" "}

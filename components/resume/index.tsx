@@ -1,4 +1,3 @@
-// import styles from "@styles/resume.module.scss";
 import { defaultOrder } from "@lib/constants";
 import { ResumeHeader } from "./ResumeHeader";
 import { Section } from "./Section";

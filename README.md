@@ -1,6 +1,37 @@
-# [JSON Resume as a Service](https://resume-service.vercel.app)
+# [JSON Resume as a Service](https://jsonresume-service.vercel.app)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FDrakeAxelrod%2Fjson-resume-service)
+<p align="center">
+  <a href="https://jsonresume-service.vercel.app/">jsonresume-service.vercel.app</a>
+</p>
+
+## 🔥 Refactors + Secret Gists
+
+#### Secret Gist
+
+> [!Tip]
+> For private secret gists
+>
+> - [localhost:3000/gist/<gist_id>](http://localhost:3000/gist/<gist_id>)
+> the first json file from that secret gist will be attempted
+> the file can be named anything `my-private.json`
+>
+> eg: [localhost:3000/gist/6776c2096963f1ca8ddb1817c8674b93](http://localhost:3000/gist/6776c2096963f1ca8ddb1817c8674b93)
+> eg: [https://jsonresume-service.vercel.app/gist/6776c2096963f1ca8ddb1817c8674b93](https://jsonresume-service.vercel.app/gist/6776c2096963f1ca8ddb1817c8674b93)
+
+#### Public Gist
+
+> [!Tip]
+> For public gist `resume.json`
+>
+> - [localhost:3000/user/<username>](http://localhost:3000/<username>)
+> the user must have a public gist named `resume.json`
+>
+> eg: [http://localhost:3000/user/drakeaxelrod](http://localhost:3000/user/drakeaxelrod)
+> eg: [https://jsonresume-service.vercel.app/user/drakeaxelrod](https://jsonresume-service.vercel.app/user/drakeaxelrod)
+
+---
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https//github.com/metaory/json-resume-service)
 
 <p align="center">
 <img src="public/resume-service-image.png" alt="resume service example" />
@@ -136,13 +167,23 @@ The following is a basic schema:[^1]
 
 ## Why use this service?
 
-Because it allows you to provide resumes in various styles as a service. This means that you define one data file (a resume.json) and you upload it as a public gist to github. Then you can provide that information to this service which whill dynamically generate resumes according to compliant formatters. This means that you can create professional looking resumes within seconds after defining your json resume.
+Because it allows you to provide resumes in various styles as a service.
+This means that you define one data file (a resume.json) and you upload it as a public gist to github.
+
+> [!Tip]
+> use **secret gists**
+>
+> - the filename can be anything
+> - the first json file will be attempted
+
+Then you can provide that information to this service which will dynamically generate resumes according to compliant formatters.
+This means that you can create professional looking resumes within seconds after defining your json resume.
 
 ## Deploy your own
 
 You'll want to fork this repository and deploy your own resume generator service.
 
-1. Click the fork button at the top right of GitHub or just click this link [Fork](https://github.com/DrakeAxelrod/json-resume-service/fork)
+1. Click the fork button at the top right of GitHub or just click this link [Fork](https://github.com/metaory/json-resume-service/fork)
 2. Clone your forked repository
 
 ```bash
@@ -158,48 +199,26 @@ cd resume-service
 6. Run locally with the project locally
 
 ```bash
-yarn dev or npm run dev
+pnpm dev or npm run dev
 ```
 
 7. Visit [localhost:3000](http://localhost:3000)
    - if nothing happens, run
 
+
 ```bash
 npm i
-# or if you use yarn
-yarn
 ```
 
 7. Deploy to the cloud by running going to [Vercel](https://vercel.com/) and making an account if you don't have one or you another hosting service of your choice.
 
-## Authors
-
-- Drake Axelrod ([@drakeaxelrod](https://twitter.com/drakeaxelrod)) - [website](https://www.draxel.io)
-
-## Contributors
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tr>
-    <td align="center">
-      <a href="https://github.com/DrakeAxelrod">
-        <img src="https://avatars.githubusercontent.com/u/51012876?v=4" width="64px;" alt="Drake Axelrod" style="border-radius: 100%;"/>
-      </a>
-      <br />
-      <sub>
-        <b>Drake Axelrod</b>
-      </sub>
-    </td>
-  </tr>
-</table>
-
 ## License
 
-MIT © [Drake Axelrod](https://github.com/DrakeAxelrod)
+Copyright © 2024-present [metaory](https://github.com/metaory)
 
-👉 [license](https://github.com/DrakeAxelrod/json-resume-service/blob/main/LICENSE.md)
+Copyright © 2021-2023 [Drake Axelrod](https://github.com/drakeaxelrod)
+
+[MIT](LICENSE)
 
 ## Footer
 
