@@ -1,8 +1,9 @@
 # [JSON Resume as a Service](https://jsonresume-service.vercel.app)
 
-<p align="center">
+<div align="center">
+  <img alt="social" src="https://raw.githubusercontent.com/metaory/jsonresume-service/master/.github/assets/social.png">
   <a href="https://jsonresume-service.vercel.app/">jsonresume-service.vercel.app</a>
-</p>
+</div>
 
 ## 🔥 Refactors + Secret Gists
 
@@ -15,8 +16,7 @@
 > the first json file from that secret gist will be attempted
 > the file can be named anything `my-private.json`
 >
-> eg: [localhost:3000/gist/6776c2096963f1ca8ddb1817c8674b93](http://localhost:3000/gist/6776c2096963f1ca8ddb1817c8674b93)
-> eg: [https://jsonresume-service.vercel.app/gist/6776c2096963f1ca8ddb1817c8674b93](https://jsonresume-service.vercel.app/gist/6776c2096963f1ca8ddb1817c8674b93)
+> eg: [jsonresume-service.vercel.app/gist/6776c2096963f1ca8ddb1817c8674b93](https://jsonresume-service.vercel.app/gist/6776c2096963f1ca8ddb1817c8674b93)
 
 #### Public Gist
 
@@ -26,8 +26,7 @@
 > - [localhost:3000/user/<username>](http://localhost:3000/<username>)
 > the user must have a public gist named `resume.json`
 >
-> eg: [http://localhost:3000/user/drakeaxelrod](http://localhost:3000/user/drakeaxelrod)
-> eg: [https://jsonresume-service.vercel.app/user/drakeaxelrod](https://jsonresume-service.vercel.app/user/drakeaxelrod)
+> eg: [jsonresume-service.vercel.app/user/drakeaxelrod](https://jsonresume-service.vercel.app/user/drakeaxelrod)
 
 ---
 
