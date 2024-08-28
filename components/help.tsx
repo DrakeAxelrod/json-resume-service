@@ -9,15 +9,14 @@ export default () => (<> {[
   [
     'secret',
     tpl`It ${"must"} have a ${"json file"}`,
-    tpl`It can be ${"named anything"}`,
+    tpl`It ${"can"} be named ${"anything"}`,
     tpl`The ${"first json file"} will be attempted`,
-    tpl`Go to ${"origin"}/${"username"}/${"secret_gist_id"}`
   ],
   [
     'public',
-    tpl`It must have a ${'json file'}`,
-    tpl`It can be ${'named anything'}`,
-    tpl`The ${'first json file'} will be attempted`,
+    tpl`It ${"must"} have a ${"json file"}`,
+    tpl`It ${"must"} be named ${'resume.json'}`,
+    tpl`The ${'resume.json'} will be attempted`,
   ],
 ].reduce((acc, [visibility, ...points], i) => [
   ...acc,
