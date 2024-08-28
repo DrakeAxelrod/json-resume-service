@@ -68,7 +68,7 @@ main {
   row-gap: 6em;
   justify-self: center;
   justify-items: center;
-  background: radial-gradient(ellipse at top, var(--bg), var(--oo)),
+  background: radial-gradient(ellipse at top, var(--bg), var(--c0)),
     radial-gradient(ellipse at bottom, var(--oo), var(--bg));
   background-size: 200% 200%;
   animation: Gradient 10s ease infinite;
