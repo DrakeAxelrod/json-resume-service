@@ -63,13 +63,11 @@ main {
 main {
   color: var(--fg);
   display: grid;
+  // grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
   grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
   row-gap: 6em;
   justify-self: center;
   justify-items: center;
-// background-color: #4158D0;
-// background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
-  // background: radial-gradient(circle at top, var(--c4), var(--c1));
   background: radial-gradient(ellipse at top, var(--bg), var(--oo)),
     radial-gradient(ellipse at bottom, var(--oo), var(--bg));
   background-size: 200% 200%;
@@ -80,6 +78,14 @@ main {
   width: 100%;
   transition-property: all;
   align-content: center;
+  overflow-x: hidden;
+}
+
+@media (max-width: 760px) {
+  main {
+    grid-template-columns: 1fr;
+    padding: 4em 0;
+  }
 }
 
 

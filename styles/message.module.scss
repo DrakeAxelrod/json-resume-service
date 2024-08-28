@@ -1,4 +1,5 @@
 .message {
+  max-width: 75vw;
   background-color: var(--oo);
   border-radius: 2em;
   box-shadow: 0 0 0 2em var(--oo), 0 1em 3em 3em var(--bg);
@@ -9,7 +10,7 @@
   outline-color: var(--oo);
   outline-style: solid;
   outline-width: 1em;
-  padding: 2em 3em;
+  padding: 2em;
   text-decoration: none;
   transition-duration: 0.4s;
   transition-property: all;
@@ -26,7 +27,7 @@
 
   &>h3 {
     color: var(--xg);
-    font-size: 2.4em;
+    font-size: 2em;
     font-style: italic;
     letter-spacing: 4px;
     text-transform: uppercase;
