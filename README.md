@@ -1,8 +1,20 @@
-# [JSON Resume as a Service](https://jsonresume-service.vercel.app)
+
+<div align="center">
+ <table>
+   <tr>
+     <td valign="center">
+        <img alt="icon" height="50" src="https://raw.githubusercontent.com/metaory/jsonresume-service/master/public/icon.png">
+     </td>
+     <td valign="center">
+       <h2>JSONResume as a Service</h2>
+     </td>
+   </tr>
+ </table>
+</div>
 
 <div align="center">
   <img alt="social" src="https://raw.githubusercontent.com/metaory/jsonresume-service/master/.github/assets/social.png">
-  <a href="https://jsonresume-service.vercel.app/">jsonresume-service.vercel.app</a>
+  <h4><a href="https://jsonresume-service.vercel.app/">jsonresume-service.vercel.app</a></h4>
 </div>
 
 ## 🔥 Refactors + Secret Gists
