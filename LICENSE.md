@@ -2,7 +2,7 @@ MIT License
 
 Copyright © 2024-present metaory <metaory@gmail.com>
 
-Copyright © 2021-2023 Drake Axelrod <drake@draxel.io>
+Copyright © 2021-2024 Drake Axelrod <drakeaxelrod@gmail.com>
 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

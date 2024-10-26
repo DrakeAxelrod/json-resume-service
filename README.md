@@ -3,7 +3,7 @@
  <table>
    <tr>
      <td valign="center">
-        <img alt="icon" height="50" src="https://raw.githubusercontent.com/metaory/jsonresume-service/master/public/icon.png">
+        <img alt="icon" height="50" src="https://raw.githubusercontent.com/DrakeAxelrod/json-resume-service/main/public/icon.png">
      </td>
      <td valign="center">
        <h2>JSONResume as a Service</h2>
@@ -13,8 +13,8 @@
 </div>
 
 <div align="center">
-  <img alt="social" src="https://raw.githubusercontent.com/metaory/jsonresume-service/master/.github/assets/social.png">
-  <h4><a href="https://jsonresume-service.vercel.app/">jsonresume-service.vercel.app</a></h4>
+  <img alt="social" src="https://raw.githubusercontent.com/DrakeAxelrod/json-resume-service/main/.github/assets/social.png">
+  <h4><a href="https://json-resume-service.vercel.app/">json-resume-service.vercel.app</a></h4>
 </div>
 
 ## 🔥 Refactors + Secret Gists
@@ -194,7 +194,7 @@ This means that you can create professional looking resumes within seconds after
 
 You'll want to fork this repository and deploy your own resume generator service.
 
-1. Click the fork button at the top right of GitHub or just click this link [Fork](https://github.com/metaory/jsonresume-service/fork)
+1. Click the fork button at the top right of GitHub or just click this link [Fork](https://github.com/DrakeAxelrod/json-resume-service/fork)
 2. Clone your forked repository
 
 ```bash
@@ -227,7 +227,7 @@ npm i
 
 Copyright © 2024-present [metaory](https://github.com/metaory)
 
-Copyright © 2021-2023 [Drake Axelrod](https://github.com/drakeaxelrod)
+Copyright © 2021-2024 [Drake Axelrod](https://github.com/drakeaxelrod)
 
 [MIT](LICENSE)
 
