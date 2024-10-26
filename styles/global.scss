@@ -40,9 +40,9 @@
 html,
 body,
 main {
-  width: 100vw;
-  height: 100vh;
-  background: var(--oo);
+  min-width: 100%;
+  min-height: 100vh;
+  background: white; //var(--oo);
 }
 
 @keyframes Gradient {
@@ -61,15 +61,17 @@ main {
 
 
 main {
-  color: var(--fg);
+  // color: var(--fg);
+  color: black;
   display: grid;
   // grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
   grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
   row-gap: 6em;
   justify-self: center;
   justify-items: center;
-  background: radial-gradient(ellipse at top, var(--bg), var(--c0)),
-    radial-gradient(ellipse at bottom, var(--oo), var(--bg));
+  background: white;
+  //radial-gradient(ellipse at top, var(--bg), var(--c0)),
+   // radial-gradient(ellipse at bottom, var(--oo), var(--bg));
   background-size: 200% 200%;
   animation: Gradient 10s ease infinite;
   position: relative;
