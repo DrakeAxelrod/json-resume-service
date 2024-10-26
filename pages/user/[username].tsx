@@ -1,11 +1,12 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
-import { useRouter } from 'next/router'
-import { fetchByUsername } from '@lib/gists'
-import Resume from '@components/resume'
 import Loader from '@components/loader'
 import Message from '@components/message'
+import Resume from '@components/resume'
+import { fetchByUsername } from '@lib/gists'
+import styles from '@styles/message.module.scss'
+import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
 
 export default function Page() {
   const router = useRouter()
@@ -23,8 +24,7 @@ export default function Page() {
   }, [username])
 
   if (isLoading) return <Loader />
-  if (error) return <Message msg={error} />
+  if (error) return <div className={styles.container}><Message msg={error} /></div>
   if (data) return (<Resume resume={data} />)
-
-  return <Message msg="NOT FOUND" />
+  return <div className={styles.container}><Message msg="NOT FOUND" /></div>
 }

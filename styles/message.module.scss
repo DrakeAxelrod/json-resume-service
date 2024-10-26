@@ -1,22 +1,39 @@
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  transition-property: all;
+  // background: radial-gradient(ellipse at top, var(--bg), var(--c0)),
+  //             radial-gradient(ellipse at bottom, var(--oo), var(--bg));
+}
+
 .message {
-  max-width: 75vw;
-  background-color: var(--oo);
+  width: 45%;
+  height: 25%;
+  padding: 2rem;
+  // max-width: 75vw;
+  background-color: rgb(245, 245, 245);
   border-radius: 2em;
-  box-shadow: 0 0 0 2em var(--oo), 0 1em 3em 3em var(--bg);
-  color: var(--fg);
+  box-shadow: 0 0 0 0.25rem gray, 0 0.25rem 0.25rem 0.25rem gray;
+  // color: var(--fg);
   filter: brightness(70%);
   font-family: system-ui, monospace;
   opacity: 0.8;
-  outline-color: var(--oo);
+  outline-color: gray;
   outline-style: solid;
-  outline-width: 1em;
+  outline-width: 0.25rem;
   padding: 2em;
   text-decoration: none;
   transition-duration: 0.4s;
   transition-property: all;
 
   &:hover {
-    filter: brightness(100%) drop-shadow(0 0 4em var(--c5));
+    filter: brightness(100%) drop-shadow(0 0 4em black);
     opacity: 1;
 
     & span {
@@ -24,9 +41,11 @@
     }
 
   }
-
+  // h3 {
+  //   color: black !important;
+  // }
   &>h3 {
-    color: var(--xg);
+    // color: black;
     font-size: 2em;
     font-style: italic;
     letter-spacing: 4px;
