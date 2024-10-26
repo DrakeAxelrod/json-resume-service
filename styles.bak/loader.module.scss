@@ -1,0 +1,16 @@
+.loader {
+  animation: rot 1s linear infinite;
+  background: linear-gradient(var(--c2), var(--c1), var(--c5), var(--c4));
+  border-radius: 50%;
+  filter: blur(10em);
+  width: 30vw;
+  height: 30vw;
+  opacity: 0.8;
+  position: relative;
+}
+
+@keyframes rot {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,8 +1,7 @@
-import { capitalize, formatDate, generateDateRange, setHttps } from "@utils/string-parsers";
-import { SectionTitle } from "./SectionTitle";
 import styles from "@styles/resume.module.scss";
+import { capitalize, formatDate, generateDateRange } from "@utils/string-parsers";
 import { Link } from "./Link";
-import { Exists } from "../Exists";
+import { SectionTitle } from "./SectionTitle";
 
 // helpers
 type HeadingProps = {
@@ -36,7 +35,8 @@ const SkillsSection: FC<ResumeSectionProps> = ({ name, resume }) => {
         return (
           <span key={i}>
             <span>
-              {i == 0 ? "| " : " | "}
+              {/* {i == 0 ? " " : " | "} */}
+              {" "}
               {skill.name}
               {" - "}
             </span>
@@ -208,7 +208,7 @@ interface ResumeFix extends Resume {
 }
 type GenericSectionProps = {
   name: string;
-  resume: ResumeFix; 
+  resume: ResumeFix;
 };
 export const Section: FC<GenericSectionProps> = ({ name, resume }) => {
 

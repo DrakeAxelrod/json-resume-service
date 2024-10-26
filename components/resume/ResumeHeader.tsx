@@ -1,9 +1,11 @@
+import { faEnvelope, faLink, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { formatPhoneNumber, minimizeUrl, setHttps } from "@utils/string-parsers";
 // import { CountryCode } from "libphonenumber-js";
-import { SectionTitle } from "./SectionTitle";
 import styles from "@styles/resume.module.scss";
 import { Exists } from "../Exists";
 import { Link } from "./Link";
+import { SectionTitle } from "./SectionTitle";
 
 type ResumeHeaderProps = {
   resume: Resume;
@@ -39,29 +41,63 @@ export const ResumeHeader: FC<ResumeHeaderProps> = ({ resume }) => {
       <p className={styles.contact}>
         <Exists exists={resume.basics?.url}>
           <a
-            id="icon"
-            className={`${styles.icon} fas fa-link`}
+            className={`${styles.icon}`}
             href={setHttps(resume.basics?.url)}
             target="_blank"
             rel="noreferrer"
-          ></a>{" "}
+            style={{
+              display: "inline-block",
+              fill: "black",
+              color: "black",
+              alignSelf: "center",
+              justifySelf: "center",
+              textAlign: "center",
+              verticalAlign: "middle",
+            }}
+          ><FontAwesomeIcon icon={faLink} /></a>
           <Link>{minimizeUrl(resume.basics?.url)}</Link>
         </Exists>
         <Exists exists={resume.basics?.phone}>
           <span>
-            <i id="icon" className={`${styles.icon} fas fa-phone`}></i>{" "}
+          <a
+            className={`${styles.icon}`}
+            href={`tel: ${resume.basics?.phone}`}
+            target="_blank"
+            rel="noreferrer"
+            style={{
+              display: "inline-block",
+              fill: "black",
+              color: "black",
+              alignSelf: "center",
+              justifySelf: "center",
+              textAlign: "center",
+              verticalAlign: "middle",
+            }}
+          >
+            <FontAwesomeIcon icon={faPhone} />
+          </a>
             {formatPhoneNumber(resume.basics?.phone)}
           </span>
         </Exists>
         <Exists exists={resume.basics?.email}>
           <span>
             <a
-              id="icon"
-              className={`${styles.icon} fas fa-envelope`}
+              className={`${styles.icon}`}
               href={`mailto: ${resume.basics?.email}`}
               target="_blank"
               rel="noreferrer"
-            ></a>{" "}
+              style={{
+                display: "inline-block",
+                fill: "black",
+                color: "black",
+                alignSelf: "center",
+                justifySelf: "center",
+                textAlign: "center",
+                verticalAlign: "middle",
+              }}
+            >
+              <FontAwesomeIcon icon={faEnvelope} />
+            </a>
             {resume.basics?.email}
           </span>
         </Exists>
@@ -69,14 +105,23 @@ export const ResumeHeader: FC<ResumeHeaderProps> = ({ resume }) => {
           return (
             <span key={i}>
               <a
-                id="icon"
                 target="_blank"
                 rel="noreferrer"
-                className={`${styles.icon
-                  } fa fa-${profile.network?.toLowerCase()}`}
+                className={`${styles.icon}`}
                 href={`${profile.url}`}
                 aria-label={`${profile.network}`}
-              ></a>{" "}
+                style={{
+                  display: "inline-block",
+                  fill: "black",
+                  color: "black",
+                  alignSelf: "center",
+                  justifySelf: "center",
+                  textAlign: "center",
+                  verticalAlign: "middle",
+                }}
+              >
+                <FontAwesomeIcon icon={faLink} />
+                </a>
               {profile.username}
             </span>
           );

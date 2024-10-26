@@ -1,0 +1,119 @@
+:root {
+  --c0: #220055;
+  --c1: #CC3377;
+  --c2: #55CC44;
+  --c3: #DDAA33;
+  --c4: #1177DD;
+  --c5: #6611FF;
+  --c6: #44DDBB;
+  --c7: #331177;
+  --xg: #EE22FF;
+  --oo: #44228866;
+  --fg: var(--c6);
+  --bg: var(--c7);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --fg: var(--c0);
+    --bg: #EEBBFF;
+    --c0: #CCAAEE;
+    --xg: #3344AA;
+    --c1: #881199;
+    --c2: #66FF33;
+    --c3: #FFCC11;
+    --oo: #7733AA99;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+main {
+  min-width: 100%;
+  min-height: 100vh;
+  background: white; //var(--oo);
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0%;
+  }
+
+  50% {
+    background-position: 100%;
+  }
+
+  100% {
+    background-position: 0%;
+  }
+}
+
+
+main {
+  // color: var(--fg);
+  color: black;
+  display: grid;
+  // grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  row-gap: 6em;
+  justify-self: center;
+  justify-items: center;
+  background: white;
+  //radial-gradient(ellipse at top, var(--bg), var(--c0)),
+   // radial-gradient(ellipse at bottom, var(--oo), var(--bg));
+  background-size: 200% 200%;
+  animation: Gradient 10s ease infinite;
+  position: relative;
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  transition-property: all;
+  align-content: center;
+  overflow-x: hidden;
+}
+
+@media (max-width: 760px) {
+  main {
+    grid-template-columns: 1fr;
+    padding: 4em 0;
+  }
+}
+
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+// @page {
+//   size: A1;
+//   margin: 0;
+//   padding: 0;
+// }
+
+// @media print {
+//   main{
+//     padding: 0em;
+//     margin:0;
+//   }
+// }
