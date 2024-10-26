@@ -1,43 +1,24 @@
 {
-  "name": "resume-service",
-  "private": true,
+  "name": "jsonresume-service",
+  "private": false,
+  "version": "2.0.0",
   "scripts": {
-    "predev": "node scripts/get-schema.js",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "axios": "^0.24.0",
-    "cheerio": "^1.0.0-rc.10",
-    "chrome-aws-lambda": "^10.1.0",
-    "handlebars": "^4.7.7",
-    "json2md": "^1.12.0",
-    "keyword-extractor": "^0.0.20",
-    "libphonenumber-js": "^1.9.44",
-    "next": "12.0.7",
-    "puppeteer-core": "10.4.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "resume-schema": "^1.0.0",
-    "sass": "^1.45.0",
-    "styled-components": "^5.3.3",
-    "swr": "^1.1.1",
-    "yaml": "^2.0.0-9"
+    "next": "14.x",
+    "react": "18.x",
+    "react-dom": "18.x",
+    "sass": "1.x"
   },
   "devDependencies": {
-    "@types/json2md": "^1.5.1",
-    "@types/node": "16.11.12",
-    "@types/puppeteer": "5.4.3",
-    "@types/puppeteer-core": "5.4.0",
-    "@types/react": "17.0.37",
-    "@types/react-dom": "^17.0.11",
-    "@types/styled-components": "^5.1.19",
-    "eslint": "8.4.1",
-    "eslint-config-next": "12.0.7",
-    "jest": "^27.4.5",
-    "json-schema-to-typescript": "^10.1.5",
-    "typescript": "4.5.3"
+    "@types/node": "22.x",
+    "@types/react": "18.x",
+    "@types/react-dom": "18.x",
+    "eslint": "9.x",
+    "typescript": "5.x"
   }
 }

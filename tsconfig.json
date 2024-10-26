@@ -2,9 +2,11 @@
   "compilerOptions": {
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,
+    "noImplicitAny": false,
+    "strictNullChecks": false,
+    "allowJs": true,
+    "strict": false,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
@@ -16,12 +18,12 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["/*"],
+      "@/*": ["./*"],
       "@components/*": ["components/*"],
       "@api/*": ["lib/api/*"],
       "@utils/*": ["lib/utils/*"],
       "@lib/*": ["lib/*"],
-      "@styles/*": ["styles/*"],
+      "@styles/*": ["styles/*"]
     },
     "typeRoots": [ "types" ]
   },

@@ -1,5 +1,0 @@
-
-@baseURL = http://localhost:3000
-
-GET {{baseURL}}/api/github/gists/DrakeAxelrod HTTP/1.1
-content-type: application/json

@@ -1,268 +1,150 @@
-// colors (not all used)
-$ivory: #fffff0;
-$ghostwhite: #f8f8ff;
-$whitesmoke: #f5f5f5;
-
-// Gray-scale colors
-$darkgray: #333333;
-$gray: #5d5d5d;
-$lightgray: #999999;
-// Basic colors
-$green: #c2e15f;
-$orange: #fda333;
-$purple: #d3a4f9;
-$red: #fb4485;
-$blue: #6ce0f1;
-// Awesome colors
-$awesome-emerald: #00a388;
-$awesome-skyblue: #0395de;
-$awesome-red: #dc3522;
-$awesome-pink: #ef4089;
-$awesome-orange: #ff6138;
-$awesome-nephritis: #27ae60;
-$awesome-concrete: #95a5a6;
-$awesome-dark-night: #131a28;
-$awesome: $awesome-red;
-
-// shadow :P
-$shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-// a4 properties
-$A4_actual_height: 297mm;
-$A4_height: 100%;
-$A4_width: 210mm;
-
-// fonts
-// add fallbacks
-$headerFont: Roboto;
-$bodyFont: Source Sans Pro;
-// sizes
-$default: 0.9em;
-$xl: 1.5em;
-$lg: 1em;
-$md: 0.9em;
-$sm: 0.87em;
-$xs: 0.8em;
-
-// font-colors
-$dark-text: #414141;
-$text: $darkgray;
-$gray-text: $gray;
-$light-text: $lightgray;
-$title: $text; // might not need rest
+$headerFont: system-ui, monospace;
+$bodyFont: Verdana, monospace;
 
 @mixin a4_dimensions {
   width: 210mm;
   height: 100%;
 }
+
 @mixin print_dimensions {
   width: 210mm;
   height: 297mm;
 }
 
+
 .resume-page {
-  padding: 5em 0;
-  background: $whitesmoke;
-  min-height: 100vh;
+  --fg: #000;
+  padding: 2em 0;
+  color: var(--fg);
+  position: relative;
+  margin: 4em 0;
+  background: var(--bg);
+  // display: grid;
+  // justify-content: center;
+  // align-content: center;
+  height: max-content;
+
   @media print {
     @page {
       size: A4;
       margin: 0;
     }
+
     html,
     body {
       @include print_dimensions;
     }
-    padding: 0;
-    background: transparent;
+  }
+}
+
+@media print {
+  .resume-page {
+    margin: 0;
   }
 }
 
 .A4 {
   @include a4_dimensions;
   margin: 0 auto;
-  // box-sizing: border-box;
-  padding: 12.7mm 25.4mm;
-  // line-height: 1.5;
-  background: white;
-  box-shadow: $shadow;
-  -webkit-box-shadow: $shadow;
-  // animation: fadeIn 1s ease forwards;
-  // h2 {
-  //   line-height: 1.5;
-  // }
+  padding: 1em 3em;
+
   @media print {
-    // this needs to be hyper fined tuned for correct printing
+
+
     @page {
       size: A4;
       margin: none;
     }
-    html,
-    body {
-      @include print_dimensions;
-    }
+
     font-size: 12pt;
     line-height: 1.2;
-    // padding: 0 25.4mm;
     animation: none;
     box-shadow: none;
-    -webkit-box-shadow: none;
     opacity: 1;
   }
-
-  @-o-keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @-ms-keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  }
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @-moz-keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @-webkit-keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @-o-keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @-ms-keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
 }
+
 
 .resume {
   margin: 0;
   padding: 0;
   font-family: $bodyFont;
-  font-weight: normal;
-  font-size: $default;
-  color: $default;
+
   header {
     text-align: center;
   }
+
   ul {
     padding-left: 2em;
   }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    color: $text;
-  }
+
 }
 
 .title {
   font-family: $headerFont;
   font-size: 2.68em;
-  color: $title;
+  color: var(--fg);
 }
 
 .first-name {
   font-weight: 100;
-  color: $title;
+  color: var(--fg);
 }
+
 .last-name {
   font-weight: 900;
-  color: $title;
+  color: var(--fg);
 }
 
 .position {
   font-family: $bodyFont;
-  font-size: $xs;
+  font-size: 0.7em;
 }
 
 .location {
   font-family: $bodyFont;
-  color: $light-text;
-  font-size: $sm;
+  color: var(--c7);
+  font-size: 0.8em;
 }
 
 .contact {
-  vertical-align: middle;
-  font-size: $md;
+  font-size: 0.9em;
   padding-bottom: 0.5em;
+
   span {
-    vertical-align: middle;
     padding: 0.1em;
     margin: auto;
   }
 }
 
 .summary {
-  // line-height: 1.2;
   text-align: left;
-  font-size: $default;
 }
 
 .section-title {
-  // line-height: 1.5;
   font-family: $headerFont;
-  font-size: $xl;
+  font-size: 1.5em;
   font-weight: bold;
-  color: $title;
+  color: var(--fg);
   overflow: hidden;
   text-align: left;
+
   @media print {
-    // this needs to be hyper fined tuned for correct printing
     line-height: 1.5;
   }
 }
+
 .section-title:after {
-  background-color: $title;
+  background-color: var(--bg);
   content: "";
   display: inline-block;
   height: 2px;
   position: relative;
-  vertical-align: left;
   width: 100%;
 }
+
 .section-title:after {
-  background-color: $title;
+  background-color: var(--bg);
   left: 0;
   height: 2px;
   margin-right: -50%;
@@ -270,66 +152,61 @@ $title: $text; // might not need rest
 
 .section-heading-1 {
   display: inline;
-  // line-height: 1.5;
   font-weight: 500;
   font-family: $headerFont;
-  font-size: $lg;
-  color: $text;
+  font-size: 1em;
+  color: var(--fg);
+
   span,
   p {
     font-weight: normal;
-    color: $gray-text;
-    font-size: $xs;
+    color: var(--c5);
+    font-size: 0.7em;
   }
 }
 
 .section-heading-2 {
-  // text-transform: uppercase;
   font-weight: normal;
   font-family: $headerFont;
-  font-size: $sm;
-  color: $light-text;
+  font-size: 0.8em;
+  color: var(--c6);
+
   span,
   p {
     font-weight: normal;
-    color: $gray-text;
+    color: var(--c2);
   }
 }
 
-// .section-summary {
-//   // padding-bottom: 0.4em;
-//   // padding-top: 0.1em;
-// }
-
 .left-meta {
-  // line-height: 1;
   position: relative;
   font-style: italic;
-  vertical-align: center;
   float: right;
-  font-size: $sm;
+  font-size: 0.8em;
   text-align: right;
 }
 
 .list {
   padding: 0.25em 0.75em;
-  font-size: $sm;
+  font-size: 0.7em;
   list-style-type: square;
-  // line-height: 1.2;
 }
 
 .keywords {
-  font-size: $md;
-  color: $gray-text;
+  font-size: 0.9em;
+  // color: var(--c1);
+  // background-color: var(--c4);
+  // border: solid 2px red;
+  // border-radius: 4px;
+  // padding: 0 10px;
 }
 
 .plain-link {
   text-decoration: none;
-  color: $text;
+  color: var(--c4);
 }
 
 .icon {
-  vertical-align: middle;
   padding: 0.5em;
   margin: auto;
   font-size: 0.75em;
@@ -338,28 +215,15 @@ $title: $text; // might not need rest
   min-height: 2em;
   text-align: center;
   text-decoration: none;
-  background: black;
-  color: white;
+  color: red;
+
   @media print {
-    // this needs to be hyper fined tuned for correct printing
-    // padding: 0 25.4mm;
     font-size: 0.75em;
-    color: black;
+    // color: black;
     animation: none;
     box-shadow: none;
     width: 2em;
     height: 2em;
     -webkit-box-shadow: none;
   }
-}
-.icon:hover {
-  opacity: 0.7;
-}
-
-.hide {
-  display: none;
-}
-
-.area {
-  letter-spacing: 0.0001em;
 }
