@@ -3,9 +3,6 @@
  <table>
    <tr>
      <td valign="center">
-        <img alt="icon" height="50" src="https://raw.githubusercontent.com/DrakeAxelrod/json-resume-service/main/public/icon.png">
-     </td>
-     <td valign="center">
        <h2>JSONResume as a Service</h2>
      </td>
    </tr>
@@ -13,7 +10,6 @@
 </div>
 
 <div align="center">
-  <img alt="social" src="https://raw.githubusercontent.com/DrakeAxelrod/json-resume-service/main/.github/assets/social.png">
   <h4><a href="https://json-resume-service.vercel.app/">json-resume-service.vercel.app</a></h4>
 </div>
 
@@ -223,11 +219,14 @@ npm i
 
 7. Deploy to the cloud by running going to [Vercel](https://vercel.com/) and making an account if you don't have one or you another hosting service of your choice.
 
+## Contributors
+
+- [Drake Axelrod](https://github.com/drakeaxelrod)
+- [metaory](https://github.com/metaory)
+
 ## License
 
-Copyright © 2024-present [metaory](https://github.com/metaory)
-
-Copyright © 2021-2024 [Drake Axelrod](https://github.com/drakeaxelrod)
+Copyright © 2021-present [Drake Axelrod](https://github.com/drakeaxelrod)
 
 [MIT](LICENSE)
 
